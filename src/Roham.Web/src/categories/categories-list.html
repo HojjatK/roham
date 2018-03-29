@@ -1,0 +1,37 @@
+﻿<template>
+    <require from="./../components/treelist/tree-list"></require>
+    <require from="./../components/select-picker"></require>
+
+    <section class="categories-list">
+        <fieldset>
+            <legend>Categories</legend>
+        </fieldset>
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="categorySite">Site</label>
+                        <div class="col-md-8">
+                            <select-picker name="categorySite" selectable-values.bind="availableSites" selected-value.two-way="selectedSiteId" changed.call="onSiteChanged($newValue, $oldValue)"></select-picker>
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+            <div class="row">
+                <div class="tree-list-container-outer">
+                    <tree-list nodes.bind="nodes"       
+                               columns.bind="columns"                                               
+                               focused.delegate="onFocus($event)"
+                               selection-changed.delegate="onSelect($event)"
+                               collapsed.delegate="onCollapsed($event)"
+                               expanded.delegate="onExpanded($event)"
+                               dblclick.delegate="onDblClicked($event)"
+                               view-model.ref="tree">
+                    </tree-list>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</template>

@@ -1,0 +1,82 @@
+﻿<template>
+    <require from="./../validation-summary.html"></require>
+    <require from="./../nav/form-title.html"></require>
+    <require from="./../dirty"></require>    
+    <require from="./../components/select-picker"></require>
+    
+    <form-title title.bind="viewTitle" showdirty.bind="isDirty" showundo.bind="showUndo" showdelete.bind="showDelete" back.call="goBack()" undo.call="undo()"></form-title>
+
+    <form name="siteForm" class="form-horizontal" role="form"
+          dirty.bind="isDirty"
+          submit.delegate="createSite()"
+          validation-renderer="bootstrap-form"
+          validation-errors.bind="errors">
+
+        <validation-summary errors.bind="errors"
+                            autofocus.bind="controller.validateTrigger === 'manual'">
+        </validation-summary>
+
+        <fieldset>                
+            <div class="container">
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="siteTitle">Title *</label>
+                        <div class="col-4">
+                            <input class="form-control" id="siteTitle" name="title" change.delegate="onTitleChange($event)" value.bind="model.title & validate" maxlength.bind="nameMaxLen" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="siteName">Friendly Url *</label>
+                        <div class="col-4">
+                            <input class="form-control" id="siteName" name="name" value.bind="model.name & validate" maxlength.bind="nameMaxLen"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label">Active</label>
+                        <div class="col-2">
+                            <div class="checkbox-square">
+                                <input type="checkbox" id="siteIsActive" name="isActive" checked.bind="model.isActive" />
+                                <label for="siteIsActive"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label">Public</label>
+                        <div class="col-2">
+                            <div class="checkbox-square">
+                                <input type="checkbox" id="siteIsPublic" name="isPublic" checked.bind="model.isPublic" />
+                                <label for="siteIsPublic"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="siteDesription">Description</label>
+                        <div class="col-6">
+                            <textarea class="form-control" id="siteDesription" name="description" value.bind="model.description & validate" maxlength.bind="descriptionMaxLen"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="siteOwner">Site Owner</label>
+                        <div class="col-3">
+                            <select-picker name="siteOwner" selectable-values.bind="availableUsers" selected-value.two-way="model.siteOwner"></select-picker>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" disabled.bind="!isDirty" class="btn btn-default">Create</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    
+</template>

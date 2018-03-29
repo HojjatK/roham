@@ -1,0 +1,121 @@
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"][class*="theme-prism-okaidia"] ,
+pre[class*="language-"][class*="theme-prism-okaidia"] {
+	color: #f8f8f2;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"][class*="theme-prism-okaidia"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"][class*="theme-prism-okaidia"],
+pre[class*="language-"][class*="theme-prism-okaidia"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"][class*="theme-prism-okaidia"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+pre[class*="theme-prism-okaidia"]  .token.comment,
+pre[class*="theme-prism-okaidia"]  .token.prolog,
+pre[class*="theme-prism-okaidia"]  .token.doctype,
+pre[class*="theme-prism-okaidia"]  .token.cdata {
+	color: slategray;
+}
+
+pre[class*="theme-prism-okaidia"]  .token.punctuation {
+	color: #f8f8f2;
+}
+
+pre[class*="theme-prism-okaidia"]  .namespace {
+	opacity: .7;
+}
+
+pre[class*="theme-prism-okaidia"]  .token.property,
+pre[class*="theme-prism-okaidia"]  .token.tag,
+pre[class*="theme-prism-okaidia"]  .token.constant,
+pre[class*="theme-prism-okaidia"]  .token.symbol,
+pre[class*="theme-prism-okaidia"]  .token.deleted {
+	color: #f92672;
+}
+
+pre[class*="theme-prism-okaidia"]  .token.boolean,
+pre[class*="theme-prism-okaidia"]  .token.number {
+	color: #ae81ff;
+}
+
+pre[class*="theme-prism-okaidia"]  .token.selector,
+pre[class*="theme-prism-okaidia"]  .token.attr-name,
+pre[class*="theme-prism-okaidia"]  .token.string,
+pre[class*="theme-prism-okaidia"]  .token.char,
+pre[class*="theme-prism-okaidia"]  .token.builtin,
+pre[class*="theme-prism-okaidia"]  .token.inserted {
+	color: #a6e22e;
+}
+
+pre[class*="theme-prism-okaidia"]  .token.operator,
+pre[class*="theme-prism-okaidia"]  .token.entity,
+pre[class*="theme-prism-okaidia"]  .token.url,
+pre[class*="theme-prism-okaidia"]  .language-css .token.string,
+pre[class*="theme-prism-okaidia"]  .style .token.string,
+pre[class*="theme-prism-okaidia"]  .token.variable {
+	color: #f8f8f2;
+}
+
+pre[class*="theme-prism-okaidia"]  .token.atrule,
+pre[class*="theme-prism-okaidia"]  .token.attr-value,
+pre[class*="theme-prism-okaidia"]  .token.function {
+	color: #e6db74;
+}
+
+pre[class*="theme-prism-okaidia"]  .token.keyword {
+	color: #66d9ef;
+}
+
+pre[class*="theme-prism-okaidia"]  .token.regex,
+pre[class*="theme-prism-okaidia"]  .token.important {
+	color: #fd971f;
+}
+
+pre[class*="theme-prism-okaidia"]  .token.important,
+pre[class*="theme-prism-okaidia"]  .token.bold {
+	font-weight: bold;
+}
+pre[class*="theme-prism-okaidia"]  .token.italic {
+	font-style: italic;
+}
+
+pre[class*="theme-prism-okaidia"]  .token.entity {
+	cursor: help;
+}

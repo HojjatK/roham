@@ -1,0 +1,56 @@
+﻿/*.opacity(@opacity) {
+  opacity: @opacity;
+  @opacity-ie: @opacity * 100;
+  filter: alpha(opacity=@opacity * 100); //IE8
+}*/
+#banner {
+  color: #999;
+  padding: 30px 0;
+  line-height: 30px;
+  text-align: center;
+  position: relative;
+  display: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ddd;
+}
+#banner:hover a {
+  color: #258fb8;
+}
+#banner a {
+  color: #999;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+#banner a:hover {
+  text-decoration: underline;
+}
+#banner small {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#banner .loading {
+  background: url('/Content/greyshade/images/loading_pacman.gif') center no-repeat;
+  text-indent: -9999px;
+}
+#banner .container {
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  display: none;
+}
+#banner .container .feed {
+  list-style: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#banner .container .feed li {
+  position: relative;
+}
+#banner .container .feed li small {
+  position: absolute;
+  right: 0;
+}

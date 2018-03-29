@@ -1,0 +1,25 @@
+﻿<template>
+    <section class="post-comments">
+        <fieldset>
+            <legend>Post Comments</legend>
+        </fieldset>
+
+        <div class="container-fluid">
+            <div class="row">
+                <grid read.call="getComments($event)" grid.ref="commentsGrid" selected-item.two-way="selectedComment" dblclick.trigger="editComment()"
+                      selectable.bind="true" server-paging.bind="true" pageable.bind="false" no-rows-message="No Comments">
+                    <grid-row>
+                        <grid-col heading="ID" field="id" class="col-md-1">${$item.id }</grid-col>
+                        <grid-col heading="Author" field="author" class="col-md-2">${ $item.author }</grid-col>
+                        <grid-col heading="Author Email" field="authorEmail" class="col-md-3">${ $item.authorEmail }</grid-col>                        
+                        <grid-col heading="Posted" field="posted" class="col-md-2">${ $item.posted}</grid-col>
+                        <grid-col heading="Status" field="status" class="col-md-1">${ $item.status}</grid-col>
+                        <grid-col heading="Action" field="action" class="col-md-3">
+                            <a href="admin#/posts/comments/edit/${$item.id}" class="btn"><i class="fa fa-edit"></i></a>
+                        </grid-col>
+                    </grid-row>
+                </grid>
+            </div>
+        </div>
+    </section>
+</template>

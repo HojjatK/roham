@@ -1,0 +1,1209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A365F66D-62F7-406A-ADE2-54D49845E8F6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Roham.Web</RootNamespace>
+    <AssemblyName>Roham.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>False</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>
+    </TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aurelia.protractor.js" />
+    <Content Include="build\args.js" />
+    <Content Include="build\bundles.js" />
+    <Content Include="build\export.js" />
+    <Content Include="build\paths.js" />
+    <Content Include="build\tasks\build.js" />
+    <Content Include="build\tasks\bundle.js" />
+    <Content Include="build\tasks\clean.js" />
+    <Content Include="build\tasks\dev.js" />
+    <Content Include="build\tasks\export-release.js" />
+    <Content Include="build\tasks\lint.js" />
+    <Content Include="build\tasks\prepare-release.js" />
+    <Content Include="build\tasks\serve.js" />
+    <Content Include="build\tasks\watch.js" />
+    <Content Include="config.js" />
+    <Content Include="Content\bootstrap-1.1.0.css" />
+    <Content Include="Content\bootstrap-1.1.0.min.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-multiselect.css" />
+    <Content Include="Content\bootstrap-select.min.css" />
+    <Content Include="Content\bootstrap-tagsinput.css" />
+    <Content Include="Content\bootstrap\bootstrap.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\greyshade\base\_color.css">
+      <DependentUpon>_color.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\base\_color.min.css">
+      <DependentUpon>_color.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\base\_font.css">
+      <DependentUpon>_font.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\base\_font.min.css">
+      <DependentUpon>_font.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\base\_layout.css">
+      <DependentUpon>_layout.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\base\_layout.min.css">
+      <DependentUpon>_layout.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\base\_typography.css">
+      <DependentUpon>_typography.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\base\_typography.min.css">
+      <DependentUpon>_typography.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\base\_utilities.css">
+      <DependentUpon>_utilities.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\base\_utilities.min.css">
+      <DependentUpon>_utilities.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\custom\_colors.css">
+      <DependentUpon>_colors.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\custom\_colors.min.css">
+      <DependentUpon>_colors.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\custom\_fonts.css">
+      <DependentUpon>_fonts.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\custom\_fonts.min.css">
+      <DependentUpon>_fonts.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\custom\_layout.css">
+      <DependentUpon>_layout.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\custom\_layout.min.css">
+      <DependentUpon>_layout.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\custom\_styles.css">
+      <DependentUpon>_styles.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\custom\_styles.min.css">
+      <DependentUpon>_styles.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\greyshade.css">
+      <DependentUpon>greyshade.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\greyshade.min.css">
+      <DependentUpon>greyshade.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\images\fancybox\blank.gif" />
+    <Content Include="Content\greyshade\images\fancybox\fancybox_loading.gif" />
+    <Content Include="Content\greyshade\images\fancybox\fancybox_sprite.png" />
+    <Content Include="Content\greyshade\images\loading_gray.gif" />
+    <Content Include="Content\greyshade\images\loading_pacman.gif" />
+    <Content Include="Content\greyshade\images\social\behance.png" />
+    <Content Include="Content\greyshade\images\social\coderwall.png" />
+    <Content Include="Content\greyshade\images\social\delicious.png" />
+    <Content Include="Content\greyshade\images\social\douban.png" />
+    <Content Include="Content\greyshade\images\social\email.png" />
+    <Content Include="Content\greyshade\images\social\facebook.png" />
+    <Content Include="Content\greyshade\images\social\github.png" />
+    <Content Include="Content\greyshade\images\social\google.png" />
+    <Content Include="Content\greyshade\images\social\instagram.png" />
+    <Content Include="Content\greyshade\images\social\linkedin.png" />
+    <Content Include="Content\greyshade\images\social\pinboard.png" />
+    <Content Include="Content\greyshade\images\social\pinterest.png" />
+    <Content Include="Content\greyshade\images\social\quora.png" />
+    <Content Include="Content\greyshade\images\social\rss.png" />
+    <Content Include="Content\greyshade\images\social\stackoverflow.png" />
+    <Content Include="Content\greyshade\images\social\twitter.png" />
+    <Content Include="Content\greyshade\parts\_archive.css">
+      <DependentUpon>_archive.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_archive.min.css">
+      <DependentUpon>_archive.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_article.css">
+      <DependentUpon>_article.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_article.min.css">
+      <DependentUpon>_article.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_comment.css">
+      <DependentUpon>_comment.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_comment.min.css">
+      <DependentUpon>_comment.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_footer.css">
+      <DependentUpon>_footer.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_footer.min.css">
+      <DependentUpon>_footer.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_header.css">
+      <DependentUpon>_header.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_header.min.css">
+      <DependentUpon>_header.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_index.css">
+      <DependentUpon>_index.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_index.min.css">
+      <DependentUpon>_index.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_post.css">
+      <DependentUpon>_post.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_post.min.css">
+      <DependentUpon>_post.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_syntax.css">
+      <DependentUpon>_syntax.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_syntax.min.css">
+      <DependentUpon>_syntax.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_twitter.css">
+      <DependentUpon>_twitter.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\parts\_twitter.min.css">
+      <DependentUpon>_twitter.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\plugins\_fancybox.css">
+      <DependentUpon>_fancybox.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\plugins\_fancybox.min.css">
+      <DependentUpon>_fancybox.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\_base.css">
+      <DependentUpon>_base.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\_base.min.css">
+      <DependentUpon>_base.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\_custom.css">
+      <DependentUpon>_custom.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\_custom.min.css">
+      <DependentUpon>_custom.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\_greyshade.css">
+      <DependentUpon>_greyshade.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\_greyshade.min.css">
+      <DependentUpon>_greyshade.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\_parts.css">
+      <DependentUpon>_parts.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\_parts.min.css">
+      <DependentUpon>_parts.css</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\_plugins.css">
+      <DependentUpon>_plugins.less</DependentUpon>
+    </Content>
+    <Content Include="Content\greyshade\_plugins.min.css">
+      <DependentUpon>_plugins.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\admin-nav.css">
+      <DependentUpon>admin-nav.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\admin-nav.min.css">
+      <DependentUpon>admin-nav.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\admin.css">
+      <DependentUpon>admin.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\admin.min.css">
+      <DependentUpon>admin.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\common\boxes.css">
+      <DependentUpon>boxes.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\common\boxes.min.css">
+      <DependentUpon>boxes.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\common\buttons.css">
+      <DependentUpon>buttons.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\common\buttons.min.css">
+      <DependentUpon>buttons.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\common\checkboxes.css">
+      <DependentUpon>checkboxes.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\common\checkboxes.min.css">
+      <DependentUpon>checkboxes.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\common\spinner.css">
+      <DependentUpon>spinner.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\common\spinner.min.css">
+      <DependentUpon>spinner.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\images\brand.png" />
+    <Content Include="Content\roham\images\busy.gif" />
+    <Content Include="Content\roham\images\greyshade\fancybox\blank.gif" />
+    <Content Include="Content\roham\images\greyshade\fancybox\fancybox_loading.gif" />
+    <Content Include="Content\roham\images\greyshade\fancybox\fancybox_sprite.png" />
+    <Content Include="Content\roham\images\greyshade\loading_gray.gif" />
+    <Content Include="Content\roham\images\greyshade\loading_pacman.gif" />
+    <Content Include="Content\roham\images\greyshade\social\behance.png" />
+    <Content Include="Content\roham\images\greyshade\social\coderwall.png" />
+    <Content Include="Content\roham\images\greyshade\social\delicious.png" />
+    <Content Include="Content\roham\images\greyshade\social\douban.png" />
+    <Content Include="Content\roham\images\greyshade\social\email.png" />
+    <Content Include="Content\roham\images\greyshade\social\facebook.png" />
+    <Content Include="Content\roham\images\greyshade\social\github.png" />
+    <Content Include="Content\roham\images\greyshade\social\google.png" />
+    <Content Include="Content\roham\images\greyshade\social\instagram.png" />
+    <Content Include="Content\roham\images\greyshade\social\linkedin.png" />
+    <Content Include="Content\roham\images\greyshade\social\pinboard.png" />
+    <Content Include="Content\roham\images\greyshade\social\pinterest.png" />
+    <Content Include="Content\roham\images\greyshade\social\quora.png" />
+    <Content Include="Content\roham\images\greyshade\social\rss.png" />
+    <Content Include="Content\roham\images\greyshade\social\stackoverflow.png" />
+    <Content Include="Content\roham\images\greyshade\social\twitter.png" />
+    <Content Include="Content\roham\install.css">
+      <DependentUpon>install.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\install.min.css">
+      <DependentUpon>install.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\login.css">
+      <DependentUpon>login.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\login.min.css">
+      <DependentUpon>login.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\reset.css">
+      <DependentUpon>reset.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\reset.min.css">
+      <DependentUpon>reset.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\search-box.css">
+      <DependentUpon>search-box.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\search-box.min.css">
+      <DependentUpon>search-box.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\site.css">
+      <DependentUpon>site.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\variables.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="Content\roham\variables.min.css">
+      <DependentUpon>variables.css</DependentUpon>
+    </Content>
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\Admin\Views\Install\Install.cshtml" />
+    <Content Include="Areas\Admin\Views\Install\_Verification.cshtml" />
+    <Content Include="Areas\Admin\Views\Install\_InstallForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Install\_Sqlite.cshtml" />
+    <Content Include="Areas\Admin\Views\Install\_SqlServer.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\AdminPage.cshtml" />
+    <Content Include="Areas\Admin\Views\Install\Upgrade.cshtml" />
+    <Content Include="Areas\Admin\Views\Install\_Cache.cshtml" />
+    <Content Include="Areas\Admin\Views\Install\_Smtp.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_layout.cshtml" />
+    <Content Include="Areas\Admin\Views\_viewstart.cshtml" />
+    <Content Include="build\tasks\e2e.js1" />
+    <Content Include="build\tasks\test.js1" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\roham\install.less" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="Content\roham\site.less" />
+    <Content Include="gulpfile.js" />
+    <Content Include="karma.conf.js" />
+    <Content Include="protractor.conf.js" />
+    <Content Include="Content\roham\login.less" />
+    <Content Include="Content\roham\common\buttons.less" />
+    <Content Include="Content\roham\common\checkboxes.less" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="Content\roham\admin.less" />
+    <Content Include="Content\roham\admin-nav.less" />
+    <Content Include="Content\roham\variables.less" />
+    <Content Include="Content\roham\search-box.less" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\responsive-embed.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Content\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Content\bootstrap\mixins\table-row.less" />
+    <Content Include="Content\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Content\bootstrap\mixins\size.less" />
+    <Content Include="Content\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Content\bootstrap\mixins\resize.less" />
+    <Content Include="Content\bootstrap\mixins\reset-text.less" />
+    <Content Include="Content\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Content\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Content\bootstrap\mixins\panels.less" />
+    <Content Include="Content\bootstrap\mixins\pagination.less" />
+    <Content Include="Content\bootstrap\mixins\opacity.less" />
+    <Content Include="Content\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Content\bootstrap\mixins\list-group.less" />
+    <Content Include="Content\bootstrap\mixins\labels.less" />
+    <Content Include="Content\bootstrap\mixins\image.less" />
+    <Content Include="Content\bootstrap\mixins\hide-text.less" />
+    <Content Include="Content\bootstrap\mixins\grid.less" />
+    <Content Include="Content\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Content\bootstrap\mixins\gradients.less" />
+    <Content Include="Content\bootstrap\mixins\forms.less" />
+    <Content Include="Content\bootstrap\mixins\clearfix.less" />
+    <Content Include="Content\bootstrap\mixins\center-block.less" />
+    <Content Include="Content\bootstrap\mixins\buttons.less" />
+    <Content Include="Content\bootstrap\mixins\border-radius.less" />
+    <Content Include="Content\bootstrap\mixins\background-variant.less" />
+    <Content Include="Content\bootstrap\mixins\alerts.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap-tagsinput.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\roham\reset.less" />
+    <Content Include="Content\roham\common\boxes.less" />
+    <Content Include="Content\roham\common\spinner.less" />
+    <Content Include="Content\greyshade\greyshade.less" />
+    <Content Include="Content\greyshade\_base.less" />
+    <Content Include="Content\greyshade\_custom.less" />
+    <Content Include="Content\greyshade\_parts.less" />
+    <Content Include="Content\greyshade\_plugins.less" />
+    <Content Include="Content\greyshade\_greyshade.less" />
+    <Content Include="Content\greyshade\base\_color.less" />
+    <Content Include="Content\greyshade\base\_font.less" />
+    <Content Include="Content\greyshade\base\_layout.less" />
+    <Content Include="Content\greyshade\base\_typography.less" />
+    <Content Include="Content\greyshade\base\_utilities.less" />
+    <Content Include="Content\greyshade\custom\_colors.less" />
+    <Content Include="Content\greyshade\custom\_fonts.less" />
+    <Content Include="Content\greyshade\custom\_layout.less" />
+    <Content Include="Content\greyshade\custom\_styles.less" />
+    <Content Include="Content\greyshade\parts\_archive.less" />
+    <Content Include="Content\greyshade\parts\_article.less" />
+    <Content Include="Content\greyshade\parts\_comment.less" />
+    <Content Include="Content\greyshade\parts\_footer.less" />
+    <Content Include="Content\greyshade\parts\_header.less" />
+    <Content Include="Content\greyshade\parts\_index.less" />
+    <Content Include="Content\greyshade\parts\_post.less" />
+    <Content Include="Content\greyshade\parts\_syntax.less" />
+    <Content Include="Content\greyshade\parts\_twitter.less" />
+    <Content Include="Content\greyshade\plugins\_fancybox.less" />
+    <None Include="Scripts\jquery-2.2.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.2.4.js" />
+    <Content Include="Scripts\jquery-2.2.4.min.js" />
+    <Content Include="Scripts\jquery-2.2.4.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\prism\prism-readme.txt" />
+    <Content Include="Scripts\prism\prism.css" />
+    <Content Include="Scripts\prism\prism.js" />
+    <Content Include="Scripts\prism\prism.min.js" />
+    <Content Include="Scripts\prism\themes\prism-atelier-light.css" />
+    <Content Include="Scripts\prism\themes\prism-atom-dark.css" />
+    <Content Include="Scripts\prism\themes\prism-cb.css" />
+    <Content Include="Scripts\prism\themes\prism-coy.css" />
+    <Content Include="Scripts\prism\themes\prism-dark.css" />
+    <Content Include="Scripts\prism\themes\prism-default.css" />
+    <Content Include="Scripts\prism\themes\prism-funky.css" />
+    <Content Include="Scripts\prism\themes\prism-ghcolors.css" />
+    <Content Include="Scripts\prism\themes\prism-hopscotch.css" />
+    <Content Include="Scripts\prism\themes\prism-okaidia.css" />
+    <Content Include="Scripts\prism\themes\prism-pojoaque.css" />
+    <Content Include="Scripts\prism\themes\prism-tomorrow.css" />
+    <Content Include="Scripts\prism\themes\prism-twilight.css" />
+    <Content Include="Scripts\prism\themes\prism-xonokai.css" />
+    <Content Include="Scripts\roham\install.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\license.txt" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\ace\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\ace\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\ace_beautify\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\ace_beautify\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\advlist\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\advlist\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\anchor\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\anchor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\autolink\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\autolink\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\autoresize\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\autoresize\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\autosave\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\autosave\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\bbcode\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\bbcode\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\charmap\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\charmap\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\codesample\css\prism.css" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\codesample\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\codesample\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\code\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\code\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\colorpicker\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\colorpicker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\css\dialog.css" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\img\buttons.png" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\img\icons.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\img\items.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\img\menu_arrow.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\img\menu_check.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\img\progress.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\img\tabs.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\tiny_mce_popup.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\utils\editable_selects.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\utils\form_utils.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\utils\mctabs.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\compat3x\utils\validate.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\contextmenu\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\directionality\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\directionality\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\emoticons\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\example\dialog.html" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\example\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\example\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\example_dependency\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\fullpage\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\fullpage\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\fullscreen\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\hr\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\hr\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\imagetools\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\imagetools\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\image\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\image\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\importcss\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\importcss\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\insertdatetime\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\layer\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\layer\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\legacyoutput\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\link\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\link\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\lists\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\lists\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\media\moxieplayer.swf" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\media\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\media\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\nonbreaking\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\noneditable\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\noneditable\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\pagebreak\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\paste\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\paste\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\preview\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\preview\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\print\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\print\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\save\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\save\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\searchreplace\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\snippet\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\spellchecker\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\tabfocus\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\table\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\table\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\template\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\template\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\textcolor\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\textcolor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\textpattern\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\textpattern\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\address.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\article.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\aside.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\blockquote.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\div.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\dl.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\figure.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\h1.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\h2.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\h3.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\h4.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\h5.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\h6.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\hgroup.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\ol.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\p.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\pre.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\section.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\img\ul.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualchars\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\visualchars\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\wordcount\plugin.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\plugins\wordcount\plugin.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\content.inline.min.css" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\content.min.css" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\img\anchor.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\img\loader.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\img\object.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\img\trans.gif" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\skin.min.css" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\themes\modern\theme.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\themes\modern\theme.min.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\tinymce.js" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\tinymce.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="src\app.html" />
+    <Content Include="src\busy-indicator.html" />
+    <Content Include="src\categories\categories-list.html" />
+    <Content Include="src\categories\categories.html" />
+    <Content Include="src\categories\create-category.html" />
+    <Content Include="src\categories\update-category.html" />
+    <Content Include="src\components\date-picker.html" />
+    <Content Include="src\components\multi-select.html" />
+    <Content Include="src\components\select-picker.html" />
+    <Content Include="src\components\treelist\tree-list-node.css">
+      <DependentUpon>tree-list.less</DependentUpon>
+    </Content>
+    <Content Include="src\components\treelist\tree-list-node.min.css">
+      <DependentUpon>tree-list-node.css</DependentUpon>
+    </Content>
+    <Content Include="src\components\treelist\tree-list.css">
+      <DependentUpon>tree-list.less</DependentUpon>
+    </Content>
+    <Content Include="src\components\treelist\tree-list.min.css">
+      <DependentUpon>tree-list.css</DependentUpon>
+    </Content>
+    <Content Include="src\components\treelist\treelist-node.css">
+      <DependentUpon>tree-list.less</DependentUpon>
+    </Content>
+    <Content Include="src\components\treelist\treelist-node.min.css">
+      <DependentUpon>treelist-node.css</DependentUpon>
+    </Content>
+    <Content Include="src\components\tree\tree-node.css">
+      <DependentUpon>tree-node.less</DependentUpon>
+    </Content>
+    <Content Include="src\components\tree\tree-node.html" />
+    <Content Include="src\components\tree\tree-node.min.css">
+      <DependentUpon>tree-node.css</DependentUpon>
+    </Content>
+    <Content Include="src\components\treelist\tree-list-node.html" />
+    <Content Include="src\components\tree\tree-view.html" />
+    <Content Include="src\components\treelist\tree-list.html" />
+    <Content Include="src\configs\portal-cache.html" />
+    <Content Include="src\configs\portal-smtp.html" />
+    <Content Include="src\configs\portal.html" />
+    <Content Include="src\dashboard\dashboard.html" />
+    <Content Include="src\jobs\create-job.html" />
+    <Content Include="src\jobs\jobs-list.html" />
+    <Content Include="src\jobs\jobs.html" />
+    <Content Include="src\jobs\update-job.html" />
+    <Content Include="src\modal\prompt.html" />
+    <Content Include="src\nav\admin-logoff.html" />
+    <Content Include="src\nav\form-title.html" />
+    <Content Include="src\nav\form-title2.html" />
+    <Content Include="src\nav\menu-bar.html" />
+    <Content Include="src\nav\search-box.html" />
+    <Content Include="src\posts\create-serie.html" />
+    <Content Include="src\posts\post-comments.html" />
+    <Content Include="src\posts\create-post.html" />
+    <Content Include="src\posts\post-options.html" />
+    <Content Include="src\posts\post-series.html" />
+    <Content Include="src\posts\posts-list.html" />
+    <Content Include="src\posts\posts.html" />
+    <Content Include="src\posts\update-post.html" />
+    <Content Include="src\roles\create-role.html" />
+    <Content Include="src\roles\roles-list.html" />
+    <Content Include="src\roles\roles.html" />
+    <Content Include="src\configs\configs.html" />
+    <Content Include="src\roles\update-role.html" />
+    <Content Include="src\sites\create-site.html" />
+    <Content Include="src\sites\create-zone.html" />
+    <Content Include="src\sites\site-settings.html" />
+    <Content Include="src\sites\sites-list.html" />
+    <Content Include="src\sites\sites.html" />
+    <Content Include="src\sites\update-site.html" />
+    <Content Include="src\sites\update-zone.html" />
+    <Content Include="src\spinner.html" />
+    <Content Include="src\feature-tinymce\tiny-mce.html" />
+    <Content Include="src\users\create-user.html" />
+    <Content Include="src\users\update-user.html" />
+    <Content Include="src\users\users-list.html" />
+    <Content Include="src\validation-summary.html" />
+    <Content Include="src\_old\nav-bar-old.html" />
+    <Content Include="src\nav\nav-bar.html" />
+    <Content Include="src\test\e2e\src\demo.spec.js" />
+    <Content Include="src\test\e2e\src\skeleton.po.js" />
+    <Content Include="src\test\e2e\src\welcome.po.js" />
+    <Content Include="src\test\unit\app.spec.js" />
+    <Content Include="src\test\unit\setup.js" />
+    <Content Include="src\test\unit\users.spec.js" />
+    <Content Include="src\users\users.html" />
+    <Content Include="wallaby.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InstallController.cs" />
+    <Compile Include="Areas\Admin\ViewModels\CacheConfigsViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\InstallViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\SmtpViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\SqliteViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\SqlServerViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\UpgradeViewModel.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountController.Manage.cs" />
+    <Compile Include="Controllers\AccountController.OAuth.cs" />
+    <Compile Include="Controllers\AccountController.Register.cs" />
+    <Compile Include="Controllers\Api\ApiControllerBase.cs" />
+    <Compile Include="Controllers\Api\CategoryController.cs" />
+    <Compile Include="Controllers\Api\JobController.cs" />
+    <Compile Include="Controllers\Api\NavController.cs" />
+    <Compile Include="Controllers\Api\PortalController.cs" />
+    <Compile Include="Controllers\Api\PostController.cs" />
+    <Compile Include="Controllers\Api\RoleController.cs" />
+    <Compile Include="Controllers\Api\SiteController.cs" />
+    <Compile Include="Controllers\Api\UserController.cs" />
+    <Compile Include="Controllers\Api\ZoneController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IocModules\CachingModule.cs" />
+    <Compile Include="IocModules\ConfigsModule.cs" />
+    <Compile Include="IocModules\IdentityModule.cs" />
+    <Compile Include="IocModules\PersistenceModule.cs" />
+    <Compile Include="Mvc\Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Mvc\Filters\LogActionFilter.cs" />
+    <Compile Include="Mvc\ImplicitAssignmentBinder.cs" />
+    <Compile Include="Mvc\Routes\ValidPageNameRouteConstraint.cs" />
+    <Compile Include="Mvc\Routes\ValidSiteNameRouteConstraint.cs" />
+    <Compile Include="Mvc\Routes\ValidZoneNameRouteConstraint.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RohamDependencyResolver.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Startup.Ioc.cs" />
+    <Compile Include="Startup.Middlewares.cs" />
+    <Compile Include="Startup.OAuth.cs" />
+    <Compile Include="Statup.Routes.cs" />
+    <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\ExternalLoginsViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ManageUserViewModel.cs" />
+    <Compile Include="ViewModels\PostViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\ZoneViewModel.cs" />
+    <Compile Include="WebAppInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Roham.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_InstallLayout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_NavbarPartial.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\UnAuthorizedAccess.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\Site.cshtml" />
+    <Content Include="Views\Home\Zone.cshtml" />
+    <Content Include="Views\Home\Post.cshtml" />
+    <Content Include="Views\Error\CustomError.cshtml" />
+    <Content Include="src\app.js.map" />
+    <Content Include="src\main.js.map" />
+    <Content Include="src\test\e2e\src\demo.spec.js.map" />
+    <Content Include="src\test\e2e\src\skeleton.po.js.map" />
+    <Content Include="src\test\e2e\src\welcome.po.js.map" />
+    <Content Include="src\test\unit\app.spec.js.map" />
+    <Content Include="src\test\unit\setup.js.map" />
+    <Content Include="src\test\unit\users.spec.js.map" />
+    <Content Include="src\users\users.js.map" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="typings.json" />
+    <Content Include="src\nav\nav-side.html" />
+    <Content Include="src\nav\app.config" />
+    <Content Include="Views\Shared\_AdminLoginPartial.cshtml" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\langs\readme.md" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\fonts\readme.md" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\fonts\tinymce-small.json" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\fonts\tinymce.json" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="Scripts\tinymce\tinymce-dist%404.3.2\skins\lightgray\fonts\tinymce.woff" />
+    <None Include="src\components\tree\tree-node.less" />
+    <Content Include="src\components\treelist\tree-list.less" />
+    <Content Include="Views\Shared\_Sharing.cshtml" />
+    <Content Include="Views\Shared\_DisqusThread.cshtml" />
+    <Content Include="Views\Shared\_Comments.cshtml" />
+    <Content Include="Views\Shared\_ZoneLayout.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Roham.Caching\Roham.Caching.csproj">
+      <Project>{43423445-b60c-491b-a923-5eb909c323df}</Project>
+      <Name>Roham.Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Contracts\Roham.Contracts.csproj">
+      <Project>{cb3630bf-53af-4d5a-9150-1988dac6d71b}</Project>
+      <Name>Roham.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Data\Roham.Data.csproj">
+      <Project>{daac4489-af90-4aa8-961d-ac76baa9092f}</Project>
+      <Name>Roham.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Domain.Entities\Roham.Domain.Entities.csproj">
+      <Project>{0b4ee4c2-ab3b-4e14-8d58-9c82b39f351d}</Project>
+      <Name>Roham.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Domain\Roham.Domain.csproj">
+      <Project>{da6d72e8-2cb0-4af0-a4ef-9e2db609c8ee}</Project>
+      <Name>Roham.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Ioc.Autofac\Roham.Ioc.Autofac.csproj">
+      <Project>{a06fca24-24a7-46b1-98e8-7a2039e41796}</Project>
+      <Name>Roham.Ioc.Autofac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Lib.Domain\Roham.Lib.Domain.csproj">
+      <Project>{34d0c094-418b-47d9-b329-ddf82b1f4274}</Project>
+      <Name>Roham.Lib.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Lib\Roham.Lib.csproj">
+      <Project>{b4e27ae0-ec45-4e7c-a739-fde6ee01491d}</Project>
+      <Name>Roham.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Persistence.NHibernate\Roham.Persistence.NHibernate.csproj">
+      <Project>{4b5e691b-0e3e-4c0e-b187-72a510aa9a63}</Project>
+      <Name>Roham.Persistence.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Resources\Roham.Resources.csproj">
+      <Project>{f0083578-a768-4dba-99d4-0158c2ac6e94}</Project>
+      <Name>Roham.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="custom_typings\aurelia-protractor.d.ts" />
+    <TypeScriptCompile Include="custom_typings\whatwg-fetch.d.ts" />
+    <TypeScriptCompile Include="src\app.ts" />
+    <TypeScriptCompile Include="src\attr\bootstrap-select-attrib.ts" />
+    <TypeScriptCompile Include="src\bootstrap-validation\bootstrap-form-validation-renderer.ts" />
+    <TypeScriptCompile Include="src\bootstrap-validation\index.ts" />
+    <TypeScriptCompile Include="src\busy.ts" />
+    <TypeScriptCompile Include="src\capture-model.ts" />
+    <TypeScriptCompile Include="src\categories\categories-list.ts" />
+    <TypeScriptCompile Include="src\categories\categories.ts" />
+    <TypeScriptCompile Include="src\categories\create-category.ts" />
+    <TypeScriptCompile Include="src\categories\update-category.ts" />
+    <TypeScriptCompile Include="src\components\date-picker.ts" />
+    <TypeScriptCompile Include="src\components\multi-select.ts" />
+    <TypeScriptCompile Include="src\components\select-picker.ts" />
+    <TypeScriptCompile Include="src\components\events.ts" />
+    <TypeScriptCompile Include="src\components\tree\node-model.ts" />
+    <TypeScriptCompile Include="src\components\tree\tree-node-template.ts" />
+    <TypeScriptCompile Include="src\components\tree\tree-node.ts" />
+    <TypeScriptCompile Include="src\components\tree\tree-view.ts" />
+    <TypeScriptCompile Include="src\components\treelist\node-model.ts" />
+    <TypeScriptCompile Include="src\components\treelist\tree-list-node.ts" />
+    <TypeScriptCompile Include="src\components\treelist\tree-list.ts" />
+    <TypeScriptCompile Include="src\configs\portal-cache.ts" />
+    <TypeScriptCompile Include="src\configs\portal-smtp.ts" />
+    <TypeScriptCompile Include="src\configs\portal.ts" />
+    <TypeScriptCompile Include="src\converters\integer-format.ts" />
+    <TypeScriptCompile Include="src\dashboard\dashboard.ts" />
+    <TypeScriptCompile Include="src\dirty.ts" />
+    <TypeScriptCompile Include="src\feature-tinymce\tiny-mce.ts" />
+    <TypeScriptCompile Include="src\jobs\create-job.ts" />
+    <TypeScriptCompile Include="src\jobs\jobs-list.ts" />
+    <TypeScriptCompile Include="src\jobs\jobs.ts" />
+    <TypeScriptCompile Include="src\jobs\update-job.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\modal\prompt.ts" />
+    <TypeScriptCompile Include="src\models\CategoryModel.ts" />
+    <TypeScriptCompile Include="src\models\JobModel.ts" />
+    <TypeScriptCompile Include="src\models\Navigation.ts" />
+    <TypeScriptCompile Include="src\models\PortalModel.ts" />
+    <TypeScriptCompile Include="src\models\PostModel.ts" />
+    <TypeScriptCompile Include="src\models\ResultModel.ts" />
+    <TypeScriptCompile Include="src\models\RoleModel.ts" />
+    <TypeScriptCompile Include="src\models\SiteModel.ts" />
+    <TypeScriptCompile Include="src\models\SiteSettingsModel.ts" />
+    <TypeScriptCompile Include="src\models\UserModel.ts" />
+    <TypeScriptCompile Include="src\models\ZoneModel.ts" />
+    <TypeScriptCompile Include="src\nav\admin-logoff.ts" />
+    <TypeScriptCompile Include="src\nav\nav-bar.ts" />
+    <TypeScriptCompile Include="src\nav\search-box.ts" />
+    <TypeScriptCompile Include="src\posts\create-serie.ts" />
+    <TypeScriptCompile Include="src\posts\post-comments.ts" />
+    <TypeScriptCompile Include="src\posts\create-post.ts" />
+    <TypeScriptCompile Include="src\posts\post-series.ts" />
+    <TypeScriptCompile Include="src\posts\posts-list.ts" />
+    <TypeScriptCompile Include="src\posts\posts.ts" />
+    <TypeScriptCompile Include="src\posts\update-post.ts" />
+    <TypeScriptCompile Include="src\roles\create-role.ts" />
+    <TypeScriptCompile Include="src\roles\roles-list.ts" />
+    <TypeScriptCompile Include="src\roles\roles.ts" />
+    <TypeScriptCompile Include="src\roles\update-role.ts" />
+    <TypeScriptCompile Include="src\services\DeviceService.ts" />
+    <TypeScriptCompile Include="src\services\NavigationService.ts" />
+    <TypeScriptCompile Include="src\services\NotificationService.ts" />
+    <TypeScriptCompile Include="src\configs\configs.ts" />
+    <TypeScriptCompile Include="src\sites\create-site.ts" />
+    <TypeScriptCompile Include="src\sites\create-zone.ts" />
+    <TypeScriptCompile Include="src\sites\site-settings.ts" />
+    <TypeScriptCompile Include="src\sites\sites-list.ts" />
+    <TypeScriptCompile Include="src\sites\sites.ts" />
+    <TypeScriptCompile Include="src\sites\update-site.ts" />
+    <TypeScriptCompile Include="src\sites\update-zone.ts" />
+    <TypeScriptCompile Include="src\test\e2e\src\demo.spec.ts" />
+    <TypeScriptCompile Include="src\test\e2e\src\skeleton.po.ts" />
+    <TypeScriptCompile Include="src\test\e2e\src\welcome.po.ts" />
+    <TypeScriptCompile Include="src\test\unit\app.spec.ts" />
+    <TypeScriptCompile Include="src\test\unit\setup.ts" />
+    <TypeScriptCompile Include="src\test\unit\users.spec.ts" />
+    <TypeScriptCompile Include="src\users\create-user.ts" />
+    <TypeScriptCompile Include="src\users\update-user.ts" />
+    <TypeScriptCompile Include="src\users\users-list.ts" />
+    <TypeScriptCompile Include="src\users\users.ts" />
+    <TypeScriptCompile Include="typings\aurelia-dialog.d.ts" />
+    <TypeScriptCompile Include="typings\aurelia-http-client.d.ts" />
+    <TypeScriptCompile Include="typings\BootstrapV3DatetimePicker.d.ts" />
+    <TypeScriptCompile Include="typings\moment.d.ts" />
+    <TypeScriptCompile Include="typings\tinymce.d.ts" />
+    <TypeScriptCompile Include="typings\toastr.d.ts" />
+    <TypeScriptCompile Include="typings\uuid.d.ts" />
+    <TypeScriptCompile Include="typings\validatejs.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="admin-app\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' == ''" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>2.0</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B5E691B-0E3E-4C0E-B187-72A510AA9A63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Roham.Persistence.NHibernate</RootNamespace>
+    <AssemblyName>Roham.Persistence.NHibernate</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=3.2.0.157, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MiniProfiler.3.2.0.157\lib\net40\MiniProfiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CfgSessionFactory.cs" />
+    <Compile Include="Configurators\PersistenceProviderBase.cs" />
+    <Compile Include="Configurators\SqliteMemoryPersistenceProviderConfigurator.cs" />
+    <Compile Include="Configurators\SqlitePersistenceProviderConfigurator.cs" />
+    <Compile Include="Configurators\SqlPersistenceProviderConfigurator.cs" />
+    <Compile Include="Conventions\GenericPersistentEnumType.cs" />
+    <Compile Include="Conventions\PropertyConvention.cs" />
+    <Compile Include="Conventions\ReferenceConvention.cs" />
+    <Compile Include="Mappings\AggregateRootMap.cs" />
+    <Compile Include="Mappings\Filters\RevisionFilter.cs" />
+    <Compile Include="Mappings\Jobs\JobMapping.cs" />
+    <Compile Include="Mappings\Jobs\JobTaskDetailMapping.cs" />
+    <Compile Include="Mappings\Jobs\JobTaskMapping.cs" />
+    <Compile Include="Mappings\MappingNamesHelper.cs" />
+    <Compile Include="Mappings\Parties\AddressMapping.cs" />
+    <Compile Include="Mappings\Parties\OrganisationMapping.cs" />
+    <Compile Include="Mappings\Parties\PartyMapping.cs" />
+    <Compile Include="Mappings\Parties\PartyRoleMapping.cs" />
+    <Compile Include="Mappings\Parties\PersonMapping.cs" />
+    <Compile Include="Mappings\Parties\TelephoneMapping.cs" />
+    <Compile Include="Mappings\Posts\CategoryMapping.cs" />
+    <Compile Include="Mappings\Posts\CommentMapping.cs" />
+    <Compile Include="Mappings\Posts\PostLinkMapping.cs" />
+    <Compile Include="Mappings\Posts\PostMapping.cs" />
+    <Compile Include="Mappings\Posts\PostRevisionMapping.cs" />
+    <Compile Include="Mappings\Posts\PostSerieMapping.cs" />
+    <Compile Include="Mappings\Posts\RatingMapping.cs" />
+    <Compile Include="Mappings\Posts\TagMapping.cs" />
+    <Compile Include="Mappings\Security\AppFunctionMapping.cs" />
+    <Compile Include="Mappings\Security\LogEntryMapping.cs" />
+    <Compile Include="Mappings\Security\PostPermissionMapping.cs" />
+    <Compile Include="Mappings\Security\PostWorkflowRuleMapping.cs" />
+    <Compile Include="Mappings\Security\RoleMapping.cs" />
+    <Compile Include="Mappings\Security\UserClaimMapping.cs" />
+    <Compile Include="Mappings\Security\UserLoginMapping.cs" />
+    <Compile Include="Mappings\Security\UserMapping.cs" />
+    <Compile Include="Mappings\Security\UserSessionMapping.cs" />
+    <Compile Include="Mappings\Sites\PingbackMapping.cs" />
+    <Compile Include="Mappings\Sites\PortalMapping.cs" />
+    <Compile Include="Mappings\Sites\RedirectMapping.cs" />
+    <Compile Include="Mappings\Sites\SettingMapping.cs" />
+    <Compile Include="Mappings\Sites\SiteMapping.cs" />
+    <Compile Include="Mappings\Sites\ZoneMapping.cs" />
+    <Compile Include="Mappings\Sites\ZoneTypeMapping.cs" />
+    <Compile Include="Mappings\Snippets\SnippetCommentMapping.cs" />
+    <Compile Include="Mappings\Snippets\SnippetLinkMapping.cs" />
+    <Compile Include="Mappings\Snippets\SnippetMapping.cs" />
+    <Compile Include="Mappings\Snippets\SnippetRatingMapping.cs" />
+    <Compile Include="Mappings\Snippets\SnippetRevisionMapping.cs" />
+    <Compile Include="NHConfigurator.cs" />
+    <Compile Include="NHibernateQueryHandler.cs" />
+    <Compile Include="NHPersistenceContext.cs" />
+    <Compile Include="NHPersistenceContextFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserTypes\PageNameUserType.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Roham.Data\Roham.Data.csproj">
+      <Project>{daac4489-af90-4aa8-961d-ac76baa9092f}</Project>
+      <Name>Roham.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Domain.Entities\Roham.Domain.Entities.csproj">
+      <Project>{0b4ee4c2-ab3b-4e14-8d58-9c82b39f351d}</Project>
+      <Name>Roham.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Lib.Domain\Roham.Lib.Domain.csproj">
+      <Project>{34d0c094-418b-47d9-b329-ddf82b1f4274}</Project>
+      <Name>Roham.Lib.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Lib\Roham.Lib.csproj">
+      <Project>{b4e27ae0-ec45-4e7c-a739-fde6ee01491d}</Project>
+      <Name>Roham.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

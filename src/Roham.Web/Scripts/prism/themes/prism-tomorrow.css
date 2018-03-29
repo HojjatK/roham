@@ -1,0 +1,121 @@
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code[class*="language-"][class*="theme-prism-tomorrow"],
+pre[class*="language-"][class*="theme-prism-tomorrow"] {
+	color: #ccc;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
+}
+
+/* Code blocks */
+pre[class*="language-"][class*="theme-prism-tomorrow"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"][class*="theme-prism-tomorrow"],
+pre[class*="language-"][class*="theme-prism-tomorrow"] {
+	background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"][class*="theme-prism-tomorrow"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.comment,
+pre[class*="theme-prism-tomorrow"]  .token.block-comment,
+pre[class*="theme-prism-tomorrow"]  .token.prolog,
+pre[class*="theme-prism-tomorrow"]  .token.doctype,
+pre[class*="theme-prism-tomorrow"]  .token.cdata {
+	color: #999;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.punctuation {
+	color: #ccc;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.tag,
+pre[class*="theme-prism-tomorrow"]  .token.attr-name,
+pre[class*="theme-prism-tomorrow"]  .token.namespace,
+pre[class*="theme-prism-tomorrow"]  .token.deleted {
+	color: #e2777a;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.function-name {
+	color: #6196cc;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.boolean,
+pre[class*="theme-prism-tomorrow"]  .token.number,
+pre[class*="theme-prism-tomorrow"]  .token.function {
+	color: #f08d49;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.property,
+pre[class*="theme-prism-tomorrow"]  .token.class-name,
+pre[class*="theme-prism-tomorrow"]  .token.constant,
+pre[class*="theme-prism-tomorrow"]  .token.symbol {
+	color: #f8c555;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.selector,
+pre[class*="theme-prism-tomorrow"]  .token.important,
+pre[class*="theme-prism-tomorrow"]  .token.atrule,
+pre[class*="theme-prism-tomorrow"]  .token.keyword,
+pre[class*="theme-prism-tomorrow"]  .token.builtin {
+	color: #cc99cd;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.string,
+pre[class*="theme-prism-tomorrow"]  .token.char,
+pre[class*="theme-prism-tomorrow"]  .token.attr-value,
+pre[class*="theme-prism-tomorrow"]  .token.regex,
+pre[class*="theme-prism-tomorrow"]  .token.variable {
+	color: #7ec699;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.operator,
+pre[class*="theme-prism-tomorrow"]  .token.entity,
+pre[class*="theme-prism-tomorrow"]  .token.url {
+	color: #67cdcc;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.important,
+pre[class*="theme-prism-tomorrow"]  .token.bold {
+	font-weight: bold;
+}
+pre[class*="theme-prism-tomorrow"]  .token.italic {
+	font-style: italic;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.entity {
+	cursor: help;
+}
+
+pre[class*="theme-prism-tomorrow"]  .token.inserted {
+	color: green;
+}

@@ -1,0 +1,88 @@
+﻿<template>
+    <require from="./../validation-summary.html"></require>
+    <require from="./../nav/form-title.html"></require>    
+    <require from="./../dirty"></require>
+        
+    <form-title title.bind="viewTitle" showdirty.bind="isDirty" showundo.bind="showUndo" showdelete.bind="showDelete" back.call="goBack()" undo.call="undo()" delete.call="deleteZone()"></form-title>
+
+    <form name="zoneForm" class="form-horizontal" role="form"
+          dirty.bind="isDirty"
+          submit.delegate="saveZone()"
+          validation-renderer="bootstrap-form"
+          validation-errors.bind="errors">
+
+        <validation-summary errors.bind="errors"
+                            autofocus.bind="controller.validateTrigger === 'manual'">
+        </validation-summary>
+
+        <fieldset>
+            <div class="container">
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="siteTitle">Site <i class="fa fa-info-circle"></i></label>
+                        <div class="col-4">
+                            <label class="form-control" id="siteTitle" name="siteTitle">${model.siteTitle}</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="zoneTitle">Title *</label>
+                        <div class="col-4">
+                            <input class="form-control" id="zoneTitle" name="title" value.bind="model.title & validate"  maxlength.bind="nameMaxLen"/>
+                        </div>
+                    </div>
+                                    
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="zoneName">Friendly Url *</label>
+                        <div class="col-4">
+                            <input class="form-control" id="zoneName" name="name" value.bind="model.name & validate"  maxlength.bind="nameMaxLen" />
+                        </div>
+                    </div>
+                       
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="zoneTypeSelect">Type <i class="fa fa-info-circle"></i></label>
+                        <div class="col-2">
+                            <label class="form-control">${model.zoneType}</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label">Active</label>
+                        <div class="col-2">
+                            <div class="checkbox-square">
+                                <input type="checkbox" id="zoneIsActive" name="isActive" checked.bind="model.isActive" />
+                                <label for="zoneIsActive"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label">Public</label>
+                        <div class="col-2">
+                            <div class="checkbox-square">
+                                <input type="checkbox" id="zoneIsPublic" name="isPublic" checked.bind="model.isPublic" />
+                                <label for="zoneIsPublic"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="zoneDesription">Description</label>
+                        <div class="col-6">
+                            <textarea class="form-control" id="zoneDesription" name="description" value.bind="model.description & validate"  maxlength.bind="descriptionMaxLen"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" disabled.bind="!isDirty" class="btn btn-default">Save</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    
+</template>

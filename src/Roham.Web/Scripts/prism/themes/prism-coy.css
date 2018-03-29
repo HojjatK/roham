@@ -1,0 +1,235 @@
+/**
+ * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
+ * @author Tim  Shedor
+ */
+
+code[class*="language-"][class*="theme-prism-coy"],
+pre[class*="language-"][class*="theme-prism-coy"] {
+	color: black;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"][class*="theme-prism-coy"] {
+	position: relative;
+	margin: .5em 0;
+	-webkit-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	-moz-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	border-left: 10px solid #358ccb;
+	background-color: #fdfdfd;
+	background-image: -webkit-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -moz-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -ms-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -o-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-size: 3em 3em;
+	background-origin: content-box;
+	overflow: visible;
+	max-height: 30em;
+	padding: 0;
+}
+
+code[class*="language"][class*="theme-prism-coy"] {
+	max-height: inherit;
+	height: 100%;
+	padding: 0 1em;
+	display: block;
+	overflow: auto;
+}
+
+/* Margin bottom to accomodate shadow */
+:not(pre) > code[class*="language-"][class*="theme-prism-coy"],
+pre[class*="language-"][class*="theme-prism-coy"] {
+	background-color: #fdfdfd;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-bottom: 1em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"][class*="theme-prism-coy"] {
+	position: relative;
+	padding: .2em;
+	-webkit-border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-ms-border-radius: 0.3em;
+	-o-border-radius: 0.3em;
+	border-radius: 0.3em;
+	color: #c92c2c;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	display: inline;
+	white-space: normal;
+}
+
+pre[class*="language-"][class*="theme-prism-coy"]:before,
+pre[class*="language-"][class*="theme-prism-coy"]:after {
+	content: '';
+	z-index: -2;
+	display: block;
+	position: absolute;
+	bottom: 0.75em;
+	left: 0.18em;
+	width: 40%;
+	height: 20%;
+	-webkit-box-shadow: 0px 13px 8px #979797;
+	-moz-box-shadow: 0px 13px 8px #979797;
+	box-shadow: 0px 13px 8px #979797;
+	-webkit-transform: rotate(-2deg);
+	-moz-transform: rotate(-2deg);
+	-ms-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+}
+
+:not(pre) > code[class*="language-"][class*="theme-prism-coy"]:after,
+pre[class*="language-"][class*="theme-prism-coy"]:after {
+	right: 0.75em;
+	left: auto;
+	-webkit-transform: rotate(2deg);
+	-moz-transform: rotate(2deg);
+	-ms-transform: rotate(2deg);
+	-o-transform: rotate(2deg);
+	transform: rotate(2deg);
+}
+
+pre[class*="theme-prism-coy"]  .token.comment,
+pre[class*="theme-prism-coy"]  .token.block-comment,
+pre[class*="theme-prism-coy"]  .token.prolog,
+pre[class*="theme-prism-coy"]  .token.doctype,
+pre[class*="theme-prism-coy"]  .token.cdata {
+	color: #7D8B99;
+}
+
+pre[class*="theme-prism-coy"]  .token.punctuation {
+	color: #5F6364;
+}
+
+pre[class*="theme-prism-coy"]  .token.property,
+pre[class*="theme-prism-coy"]  .token.tag,
+pre[class*="theme-prism-coy"]  .token.boolean,
+pre[class*="theme-prism-coy"]  .token.number,
+pre[class*="theme-prism-coy"]  .token.function-name,
+pre[class*="theme-prism-coy"]  .token.constant,
+pre[class*="theme-prism-coy"]  .token.symbol,
+pre[class*="theme-prism-coy"]  .token.deleted {
+	color: #c92c2c;
+}
+
+pre[class*="theme-prism-coy"]  .token.selector,
+pre[class*="theme-prism-coy"]  .token.attr-name,
+pre[class*="theme-prism-coy"]  .token.string,
+pre[class*="theme-prism-coy"]  .token.char,
+pre[class*="theme-prism-coy"]  .token.function,
+pre[class*="theme-prism-coy"]  .token.builtin,
+pre[class*="theme-prism-coy"]  .token.inserted {
+	color: #2f9c0a;
+}
+
+pre[class*="theme-prism-coy"]  .token.operator,
+pre[class*="theme-prism-coy"]  .token.entity,
+pre[class*="theme-prism-coy"]  .token.url,
+pre[class*="theme-prism-coy"]  .token.variable {
+	color: #a67f59;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+pre[class*="theme-prism-coy"]  .token.atrule,
+pre[class*="theme-prism-coy"]  .token.attr-value,
+pre[class*="theme-prism-coy"]  .token.keyword,
+pre[class*="theme-prism-coy"]  .token.class-name {
+	color: #1990b8;
+}
+
+pre[class*="theme-prism-coy"]  .token.regex,
+pre[class*="theme-prism-coy"]  .token.important {
+	color: #e90;
+}
+
+pre[class*="theme-prism-coy"]  .language-css .token.string,
+pre[class*="theme-prism-coy"]  .style .token.string {
+	color: #a67f59;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+pre[class*="theme-prism-coy"]  .token.important {
+	font-weight: normal;
+}
+
+pre[class*="theme-prism-coy"]  .token.bold {
+	font-weight: bold;
+}
+pre[class*="theme-prism-coy"]  .token.italic {
+	font-style: italic;
+}
+
+pre[class*="theme-prism-coy"]  .token.entity {
+	cursor: help;
+}
+
+pre[class*="theme-prism-coy"]  .namespace {
+	opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+	pre[class*="language-"][class*="theme-prism-coy"]  :before,
+	pre[class*="language-"][class*="theme-prism-coy"]  :after {
+		bottom: 14px;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+}
+
+/* Plugin styles */
+pre[class*="theme-prism-coy"]  .token.tab:not(:empty):before,
+pre[class*="theme-prism-coy"]  .token.cr:before,
+pre[class*="theme-prism-coy"]  .token.lf:before {
+	color: #e0d7d1;
+}
+
+/* Plugin styles: Line Numbers */
+pre[class*="language-"][class*="theme-prism-coy"].line-numbers {
+	padding-left: 0;
+}
+
+pre[class*="language-"][class*="theme-prism-coy"].line-numbers code {
+	padding-left: 3.8em;
+}
+
+pre[class*="language-"][class*="theme-prism-coy"].line-numbers .line-numbers-rows {
+	left: 0;
+}
+
+/* Plugin styles: Line Highlight */
+pre[class*="language-"][class*="theme-prism-coy"][data-line] {
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+}
+pre[data-line][class*="theme-prism-coy"] code {
+	position: relative;
+	padding-left: 4em;
+}
+pre[class*="theme-prism-coy"] .line-highlight {
+	margin-top: 0;
+}

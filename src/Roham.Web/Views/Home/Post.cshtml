@@ -1,0 +1,45 @@
+﻿@model Roham.Web.ViewModels.PostViewModel
+@{
+    Layout = "~/Views/Shared/_ZoneLayout.cshtml";
+    ViewBag.Title = Model.Title;
+}
+
+<div class="jumbotron">
+    <h1>Roham</h1>
+    <p class="lead">Welcome to Roham Post</p>
+    <p><a href="http://localhost/invalid" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>    
+</div>
+
+<br />
+<div class="container">
+    <article class="post">
+        <h1 class="title"><a href="#">@Model.Title</a></h1>
+        <div class="meta">
+            <span class="date">@Model.DisplayDate</span>
+            <span class="tags">@Model.Tags</span>
+            <span class="comments">@Model.CommentsCount</span>
+            <span class="edit"></span>
+        </div>
+        <div class="entry-content">
+            @Html.Raw(@Model.HtmlContent)
+        </div>
+    </article>
+    @if (@Model.Sharing) {
+        @Html.Partial("~/Views/Shared/_Sharing.cshtml", Model)
+    }
+    <section id="comments">
+        <h1 class="title">Comments</h1>
+        @if (Model.Disqus)
+        {
+            <div id="disqus_thread" aria-live="polite">
+                @Html.Partial("~/Views/Shared/_DisqusThread.cshtml", Model)        
+            </div>
+        }
+        else
+        {
+            <div aria-live="polite">
+                @Html.Partial("~/Views/Shared/_Comments.cshtml", Model)
+            </div>
+        }
+    </section>
+</div>

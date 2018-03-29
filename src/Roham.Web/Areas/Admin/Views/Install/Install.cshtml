@@ -1,0 +1,39 @@
+﻿@using Roham.Web.Areas.Admin.ViewModels
+@using Roham.Resources
+
+@model InstallViewModel
+
+@{
+    ViewBag.Title = Labels.Install;
+    Layout = "~/Areas/Admin/Views/Shared/_InstallLayout.cshtml";
+}
+
+@section Scripts {
+    <script type="text/javascript" src="~/Scripts/roham/install.js"></script>
+}
+
+<div id="install-busy" class="curtain" style="display:none;"></div>
+
+@if (Model.IsInstalled)
+{
+    <p class="alert alert-success">     
+        @ScreenTexts.AppilcationAlreadyInstalled.Fmt(WebAppInfo.Name)
+    </p>
+}
+else
+{
+    if (ViewBag.KeyVerified == null || !((bool)ViewBag.KeyVerified))
+    {
+        @Html.Partial("~/Areas/Admin/Views/Install/_Verification.cshtml", Model)        
+    }
+    else
+    {
+        <div class="alert alert-info">
+            <h3>@ScreenTexts.Installation_WelcomeTitle.Fmt(WebAppInfo.Name)</h3>
+            @ScreenTexts.Installation_WelcomeText.Fmt(WebAppInfo.Name)
+        </div>
+        <section id="installation-section">                        
+            @Html.Partial("~/Areas/Admin/Views/Install/_InstallForm.cshtml", Model)            
+        </section>
+    }
+}

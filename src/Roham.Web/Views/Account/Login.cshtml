@@ -1,0 +1,40 @@
+﻿@using Roham.Web.ViewModels
+
+@model  LoginViewModel
+
+<div class="login-box">
+    <section class="login">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="input-group input-group-lg">
+                <div class="input-group-addon"><span class="fa fa-lg fa-envelope"/></div>
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @id = "user-name", @type="email", @placeholder = "User name", @required = "required", @tabindex = "1" })
+            </div>
+            <div class="input-group input-group-lg">
+                <div class="input-group-addon"><span class="fa fa-lg fa-key"/></div>
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @id = "password", @placeholder = "Password", @required = "required", @tabindex = "2" })
+            </div>
+            <input type="submit" id="login" class="btn btn-success fa-lg" value="Sign in" tabindex="3" />
+
+            <div class="login-bar row">
+                <div class="pull-left">
+                    <div class="checkbox-square" style="float:left">
+                        @Html.CheckBoxFor(m => m.RememberMe, new { @tabindex = "4" })
+                        <label for="RememberMe"></label>
+                    </div>
+                    <div class="check-box-div-label">
+                        <label for="RememberMe">Keep me signed in</label>
+                    </div>
+                </div>
+
+                <div class="pull-right">
+                    @Html.ActionLink("Forget your password?", "ForgotPassword")
+                </div>
+            </div>
+        }
+    </section>    
+    @Html.Partial("_ExternalLoginsPartial", new ExternalLoginListViewModel { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
+</div>

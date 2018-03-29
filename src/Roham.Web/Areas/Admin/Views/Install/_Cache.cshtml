@@ -1,0 +1,63 @@
+﻿@using Roham.Web.Areas.Admin.ViewModels
+@using Roham.Resources
+
+@model InstallViewModel
+
+@if (Model?.CacheConfigs != null && Model.CacheConfigs.Provider == Roham.Data.CacheProviders.Redis)
+{
+    <div class="row">
+        <div class="form-group col-md-4 db-advanced">
+            <div>
+                <div class="checkbox-square" style="float:left">
+                    @Html.CheckBoxFor(m => m.AdvancedCache, new { @id = "chk-cache-advanced" })
+                    <label for="chk-cache-advanced"></label>
+                </div>
+                <div class="check-box-div-label">
+                    <label>@Labels.ShowConnectionString</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <button id="test-cache-connect" class="btn btn-default" type="button">@Labels.TestCacheConnection</button>
+        </div>
+    </div>
+
+    <div id="cachesettings-advanced" style="display:none;width:100%;">
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.CacheConfigs.ConnectionString, new { @class = "form-control", id="cache-connstr", @style = "min-width:100%;" })
+        </div>
+    </div>
+
+    <div id="cachesettings">
+        <div class="row">
+            <div id="div-cache-host" class="form-group col-md-4">
+                @Html.RequiredLabelFor(m => m.CacheConfigs.Host)
+                @Html.TextBoxFor(m => m.CacheConfigs.Host, new { @class = "form-control required", @required = "required" })
+            </div>
+
+            <div id="div-cache-port" class="form-group col-md-4">
+                @HtmlHelperExtensions.LabelForExt(Html, m => m.CacheConfigs.Port)
+                @Html.TextBoxFor(m => m.CacheConfigs.Port, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="div-cache-password" class="form-group col-md-4">
+                @Html.LabelForExt(m => m.CacheConfigs.Password)
+                @Html.PasswordFor(m => m.CacheConfigs.Password, new { @class = "form-control" })
+            </div>
+
+            <div id="div-cache-ssl" class="form-group col-md-4">
+                <div>
+                    <div class="checkbox-square-tick" style="float:left">
+                        @Html.CheckBoxFor(m => m.CacheConfigs.Ssl, new { @id = "chk-cache-ssl" })
+                        <label for="chk-cache-ssl"></label>
+                    </div>
+                    <div class="check-box-div-label">
+                        <label>@Labels.Ssl</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

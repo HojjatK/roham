@@ -1,0 +1,52 @@
+@import "../base/_color.less";
+@import "../base/_utilities.less";
+
+#banner{
+	color: @color-gray02;
+	padding: 30px 0;
+	line-height: 30px;
+	text-align: center;
+	position: relative;
+	display: none;
+	.border-shadow();
+	&:hover{
+		a{
+			color: @color-main;
+		}
+	}
+	a{
+		color: @color-gray02;
+		.transition(0.3s);
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	small{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+	.loading{
+		background: url('/Content/greyshade/images/loading_pacman.gif') center no-repeat;
+		text-indent: -9999px;
+	}
+	.container{
+		height: 30px;
+		overflow: hidden;
+		position: relative;
+		display: none;
+		.feed{
+			list-style: none;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			li{
+				position: relative;
+				small{
+					position: absolute;
+					right: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,84 @@
+﻿<template>
+    <require from="./../validation-summary.html"></require>
+    <require from="./../nav/form-title.html"></require>    
+    <require from="./../dirty"></require>
+    <require from="./../converters/integer-format"></require>
+    <require from="./../components/select-picker"></require>
+    
+    <form-title title.bind="viewTitle" showdirty.bind="isDirty" showdelete.bind="showDelete" showundo.bind="showUndo" undo.call="undo()">
+        <slot slot="ext-buttons">
+            <button click.delegate="checkCache()" class="pull-left btn btn-primary">
+                <i class="fa fa-check"></i> Check
+            </button>
+            <button click.delegate="resetCache()" class="pull-left btn btn-danger">
+                <i class="fa fa-remove"></i> Reset
+            </button>
+        </slot>
+    </form-title>
+
+    <form name="portalCacheSettingsForm" class="form-horizontal" role="form"
+            dirty.bind="isDirty"
+            submit.delegate="saveCacheSettings()"
+            validation-renderer="bootstrap-form"
+            validation-errors.bind="errors">
+
+        <validation-summary errors.bind="errors"
+                            autofocus.bind="controller.validateTrigger === 'manual'">
+        </validation-summary>
+
+        <fieldset>                
+            <div class="container">
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="themeSelect">Cache Provider</label>
+                        <div class="col-3">
+                            <select-picker name="cacheProvider" selectable-values.bind="model.availableCacheProviders" selected-value.bind="model.cacheProvider" changed.call="onProviderChange($newValue, $oldValue)"></select-picker>
+                        </div>
+                    </div>
+                        
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="cacheHost">Cache Server *</label>
+                        <div class="col-4">
+                            <input class="form-control" name="cacheHost" disabled="${isRedis ? '' : 'disabled'}" value.bind="model.cacheHost & validate"  maxlength.bind="longNameMaxLen" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="cachePort">Cache Port *</label>
+                        <div class="col-2">
+                            <input type="number" class="form-control" name="cachePort" disabled="${isRedis ? '' : 'disabled'}" value.bind="model.cachePort | integerFormat"  maxlength.bind="numberMaxLen" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="cachePassword">Cache Password</label>
+                        <div class="col-3">
+                            <input class="form-control" type="password" name="cachePassword" disabled="${isRedis ? '' : 'disabled'}" value.bind="model.cachePassword & validate"  maxlength.bind="passwordMaxLen" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label">Cache Use Ssl</label>
+                        <div class="col-2">
+                            <div class="checkbox-square">
+                                <input type="checkbox" id="cacheUseSsl" name="cacheUseSsl" disabled="${isRedis ? '' : 'disabled'}" checked.bind="model.cacheUseSsl" />
+                                <label for="cacheUseSsl"></label>
+                            </div>
+                        </div>
+                    </div>                        
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-4">
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" disabled.bind="!isDirty" class="btn btn-default">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    
+</template>

@@ -1,0 +1,19 @@
+﻿@using Microsoft.Owin.Security
+
+<section class="social">
+    <div class="social-inner">
+        @{
+            var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+            using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+            {
+                @Html.AntiForgeryToken()
+                foreach (AuthenticationDescription prv in loginProviders)
+                {
+                    string btnIcon = "fa-" + @prv.AuthenticationType.Trim().ToLower();
+                    <button type="submit" id="@prv.AuthenticationType" name="provider" value="@prv.AuthenticationType" class="fa fa-2x @btnIcon btn btn-default"></button>
+                }
+            }
+        }
+    </div>
+</section>
+

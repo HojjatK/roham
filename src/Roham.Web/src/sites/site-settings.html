@@ -1,0 +1,128 @@
+﻿<template>
+    <require from="./../validation-summary.html"></require>
+    <require from="./../nav/form-title.html"></require>
+    <require from="./../dirty"></require>
+    <require from="./../components/select-picker"></require>
+
+    <form-title title.bind="viewTitle" showdirty.bind="isDirty" showundo.bind="showUndo" showdelete.bind="showDelete" back.call="goBack()" undo.call="undo()"></form-title>
+
+    <form name="siteSettingsForm" class="form-horizontal" role="form"
+            dirty.bind="isDirty"
+            submit.delegate="saveSettings()"
+            validation-renderer="bootstrap-form"
+            validation-errors.bind="errors">
+
+        <validation-summary errors.bind="errors"
+                            autofocus.bind="controller.validateTrigger === 'manual'">
+        </validation-summary>
+
+        <fieldset>                
+            <div class="container">
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="siteTitle">Site</label>
+                        <div class="col-4">
+                            <label class="form-control" id="siteTitle">${model.siteTitle}</label> 
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="themeSelect">Theme</label>
+                        <div class="col-3">
+                            <select-picker name="theme" selectable-values.bind="model.availableThemes" selected-value.two-way="model.theme"></select-picker>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="pagetTemplateSelect">Page Template</label>
+                        <div class="col-3">
+                            <select-picker name="pageTemplate" selectable-values.bind="model.availablePageTemplates" selected-value.two-way="model.pageTemplate"></select-picker>                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="siteIntroduction">Introduction</label>
+                        <div class="col-6">
+                            <textarea class="form-control" id="siteIntroduction" name="introduction" value.bind="model.introduction & validate" maxlength.bind="longDescriptionMaxLen"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="siteHead">Head</label>
+                        <div class="col-6">
+                            <textarea class="form-control" id="siteHead" name="htmlHead" value.bind="model.htmlHead & validate" maxlength.bind="htmlDescriptionMaxLen"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="siteFooter">Footer</label>
+                        <div class="col-6">
+                            <textarea class="form-control" id="siteFooter" name="htmlFooter" value.bind="model.htmlFooter & validate" maxlength.bind="htmlDescriptionMaxLen"></textarea>
+                        </div>
+                    </div>
+                        
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="mainlinks">Main links</label>
+                        <div class="col-4">
+                            <input class="form-control" name="mainlinks" value.bind="model.mainLinks & validate" maxlength.bind="longDescriptionMaxLen"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="akismetApiKey">Akismet ApiKey</label>
+                        <div class="col-6">
+                            <input class="form-control" name="akismetApiKey" value.bind="model.akismetApiKey & validate" maxlength.bind="descriptionMaxLen"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="searchAuthor">Search Author</label>
+                        <div class="col-4">
+                            <input class="form-control" name="searchAuthor" value.bind="model.searchAuthor & validate" maxlength.bind="longNameMaxLen"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="searchDescription">Search Description</label>
+                        <div class="col-6">
+                            <textarea class="form-control" name="searchDescription" value.bind="model.searchDescription & validate" maxlength.bind="descriptionMaxLen"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="searchKeywords">Search Keywords</label>
+                        <div class="col-6">
+                            <input class="form-control" name="searchKeywords" value.bind="model.searchKeywords & validate" maxlength.bind="longDescriptionMaxLen"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="spamWords">Spam Words</label>
+                        <div class="col-6">
+                            <input class="form-control" name="spamWords" value.bind="model.spamWords & validate" maxlength.bind="longDescriptionMaxLen"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="smtpFromEmailAddress">From Email Address</label>
+                        <div class="col-6">
+                            <input class="form-control" name="smtpFromEmailAddress" value.bind="model.smtpFromEmailAddress & validate" maxlength.bind="emailMaxLen"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-4">
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" disabled.bind="!isDirty" class="btn btn-default">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+    
+</template>

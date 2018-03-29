@@ -1,0 +1,23 @@
+<template>
+  <require from="./nav/nav-side.html"></require>
+  <require from="./nav/nav-bar"></require>
+
+  <div class="wrap-outer ${sideMenuState == 'full' ? 'mnu-open-all' : (sideMenuState == 'closed' ? 'mnu-close' : 'mnu-open-part')}">
+    <nav-side router.bind="router"></nav-side>
+
+    <div class="wrap">
+        <nav-bar router.bind="router" side-menu-state.bind="sideMenuState"></nav-bar>
+
+        <div class="wrap-inner">
+            <section class="pageheader"></section>
+            <router-view></router-view>
+        </div>
+
+        <footer class="pagefooter">
+            <div class="container">
+                <p class="text-center">${copyright}</p>
+            </div>
+        </footer>
+    </div>
+  </div>
+</template>

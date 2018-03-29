@@ -1,0 +1,8 @@
+<template>
+  <require from="./../nav/menu-bar.html"></require>
+  <menu-bar router.bind="router" parent.bind="viewName"></menu-bar>
+  
+  <section class="pagecontent au-animate">
+        <router-view></router-view>
+  </section>
+</template>

@@ -1,0 +1,93 @@
+﻿@using Roham.Web.Areas.Admin.ViewModels
+@using Roham.Resources
+
+@model InstallViewModel
+
+<div class="row">
+    <div class="form-group col-md-4">
+        <div>
+            <div class="checkbox-square" style="float:left">
+                @Html.CheckBoxFor(m => m.Smtp.EnableSsl, new { @id = "chk-enable-ssl" })
+                <label for="chk-enable-ssl"></label>
+            </div>
+            <div class="check-box-div-label">
+                <label>@Labels.EnableSsl</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-md-2">
+        <button id="test-smtp-connect" class="btn btn-default" type="button">@Labels.TestSmtpConnection</button>
+    </div>
+
+    <div class="form-group col-md-2">
+        <button class="btn btn-default" id="test-smtp-email" type="button" data-toggle="modal" data-target="#test-email-modal">@Labels.TestSendEmail</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-4">
+        @Html.RequiredLabelFor(m => m.Smtp.Host)
+        @Html.TextBoxFor(m => m.Smtp.Host, new { @class = "form-control required", @required = "required" })
+    </div>
+
+    <div class="form-group col-md-4">
+        @Html.RequiredLabelFor(m => m.Smtp.Port)        
+        @Html.TextBoxFor(m => m.Smtp.Port, new { @class = "form-control required", @required = "required" })
+    </div>    
+</div>
+    
+<div class="row">
+    <div class="form-group col-md-4">
+        @Html.LabelForExt(m => m.Smtp.UserName)
+        @Html.TextBoxFor(m => m.Smtp.UserName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group col-md-4">
+        @Html.LabelForExt(m => m.Smtp.Password)
+        @Html.PasswordFor(m => m.Smtp.Password, new { @class = "form-control" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-4">
+        @Html.LabelForExt(m => m.Smtp.Domain)
+        @Html.TextBoxFor(m => m.Smtp.Domain, new { @class = "form-control" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-4">
+        @Html.LabelForExt(m => m.SmtpFrom)
+        @Html.TextBoxFor(m => m.SmtpFrom, new { @class = "form-control" })
+    </div>
+</div>
+
+<div class="modal fade" role="dialog" id="test-email-modal">
+    <div class="modal-dialog">
+        <div class="modal-content container-fluid">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Labels.TestSendEmail</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Smtp.UserName, @Labels.From)
+                        @Html.TextBoxFor(m => m.Smtp.TestEmailFromAddress, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Smtp.UserName, @Labels.To)
+                        @Html.TextBoxFor(m => m.Smtp.TestEmailToAddress, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="send-email">Send Test Email</button>
+            </div>
+        </div>
+    </div>
+</div>

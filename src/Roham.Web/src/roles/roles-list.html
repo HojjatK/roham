@@ -1,0 +1,54 @@
+﻿<template>
+    <section class="roles-list">
+        <fieldset>
+            <legend>Roles</legend>
+        </fieldset>
+
+        <div class="container-fluid">
+            <div class="row">
+                <grid read.call="getRoles($event)" grid.ref="rolesGrid" selected-item.two-way="selectedRole" dblclick.trigger="editRole()"
+                      selectable.bind="true" server-paging.bind="true" pageable.bind="false" no-rows-message="No Roles">
+                    <grid-row>
+                        <grid-col heading="ID" field="id" class="col-md-1">${$item.id }</grid-col>
+                        <grid-col heading="Name" field="title" class="col-md-2">${ $item.name }</grid-col>
+                        <grid-col heading="Type" field="roleType" class="col-md-2">${ $item.roleType }</grid-col>
+                        <grid-col heading="Descritpion" field="description" class="col-md-4">${ $item.description }</grid-col>
+                        <grid-col heading="System Role" field="isSystem" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="isSystemCbx${$item.id}" name="isSystemCbx${$item.id}" checked.bind="$item.isSystemRole" disabled="disabled" />
+                                <label disabled="disabled" for="isSystemCbx${$item.id}"></label>
+                            </div>
+                        </grid-col>
+                        <grid-col heading="Action" field="action" class="col-md-2">
+                            <a href="admin#/roles/edit/${$item.id}" class="btn"><i class="fa fa-edit"></i></a>
+                        </grid-col>
+                    </grid-row>
+                </grid>
+            </div>
+        </div>
+
+        <br />
+
+        <fieldset>
+            <legend>${selectedRole.name} Functions' Permissions</legend>
+        </fieldset>
+        <div class="container-fluid">
+             <div class="row">
+                 <grid read.call="getFuncs($event)" grid.ref="funcsGrid" 
+                       selectable.bind="false" server-paging.bind="true" pageable.bind="false" no-rows-message="No Function">
+                     <grid-row>
+                         <grid-col heading="ID" field="id" class="col-md-1">${ $item.id }</grid-col>
+                         <grid-col heading="Title" field="title" class="col-md-2">${ $item.displayName }</grid-col>                                                  
+                         <grid-col heading="Active" field="isAllowed" class="col-md-1">
+                             <div class="checkbox-square-tick">
+                                 <input type="checkbox" id="isAllowedCbx${$item.id}" name="isAllowedCbx${$item.id}" checked.bind="$item.isAllowed" disabled="disabled" />
+                                 <label disabled="disabled" for="isAllowedCbx${$item.id}"></label>
+                             </div>
+                         </grid-col>                                 
+                         <grid-col heading="Descritpion" field="description" class="col-md-8">${ $item.description }</grid-col>
+                     </grid-row>
+                 </grid>
+            </div>
+        </div>
+</section>
+</template>

@@ -1,0 +1,69 @@
+﻿<template>
+    <section class="menu-bar">
+        <nav class="menu-bar-nav" role="navigation">
+            <ul>
+                <li><span>Dashboard</span></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="pagecontent">     
+        <div class="row">
+            <div class="col-lg-4">
+                <section class="layout-box">
+                    <header class="header">
+                        <h3>Pageviews overall chart</h3>
+                    </header>
+                    <div class="content">
+                        <canvas id="line-chart" chart="type: line; should-update: false; data.bind: pageViewOverallData; native-options.bind={ segmentShowStroke: true, segmentStrokeColor: '#fff', segmentStrokeWidth: 2 }"></canvas>                        
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-4">
+                <section class="layout-box">
+                    <header class="header">
+                        <h3>Updates</h3>
+                    </header>
+                    <div class="content">
+                        <ul>
+                            <li>Page view today</li>
+                            <li>Comments waiting for moderation</li>
+                            <li>Published comments</li>
+                            <li>Posts</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>       
+            <div class="col-lg-4">
+                <section class="layout-box">
+                    <header class="header">
+                        <h3>Pageviews by posts</h3>
+                    </header>
+                    <div class="content">
+                        <canvas id="bar-chart" chart="type: bar; should-update: false; data.bind: pageViewPostsData; native-options.bind={scales: {yAxes: [{stacked: true}] } }"></canvas>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <section class="layout-box">
+                    <header class="header">
+                        <h3>Pageviews by country chart</h3>
+                    </header>
+                    <div class="content">
+                    </div>
+                </section>
+            </div>            
+            <div class="col-lg-4">
+                <section class="layout-box">
+                    <header class="header">
+                        <h3>Google analytics link</h3>
+                    </header>
+                    <div class="content">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</template>

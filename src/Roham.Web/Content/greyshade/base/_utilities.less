@@ -1,0 +1,87 @@
+@import "_color.less";
+
+.square(@property){
+	width: @property;
+	height: @property;
+}
+.user-select(@select){
+	-moz-user-select: @select;	
+	-webkit-user-select: @select;	
+    -ms-user-select: @select;
+	user-select: @select;
+}
+.border-shadow(@top: @color-gray05, @bottom: @color-gray04){
+	border-top: 1px solid @top;
+	border-bottom: 1px solid @bottom;
+}
+.center(@width, @height){
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: @width/(-2);
+	margin-top: @height/(-2);
+	width: @width;
+	height: @height;
+}
+
+.transition(@args...) {
+  -webkit-transition: @args;
+  -moz-transition: @args; 
+  -o-transition: @args;
+  transition: @args;
+}
+
+/*.opacity(@opacity) {
+  opacity: @opacity;
+  @opacity-ie: @opacity * 100;
+  filter: alpha(opacity=@opacity * 100); //IE8
+}*/
+
+.inline-block(){
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+}
+
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;  
+}
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
+.link-colors (@link, @visited, @hover, @active) {
+    & {
+        color: @link;
+        &:visited {
+            color: @visited;
+        }
+        &:hover {
+            color: @hover;
+        }
+        &:active, &:focus {
+            color: @active;
+        }
+    }
+}
+
+.pie-clearfix() {
+  zoom:1;
+  &:before, &:after{ content:""; display:table; }
+  &:after{ clear: both; }
+}

@@ -1,0 +1,39 @@
+// Here you can easily change font faces which are used in your site.
+// To give it a try, uncomment some of the lines below rebuild your blog, and see how it works. your sites's.
+// If you love to use Web Fonts, you also need to add some lines to source/_includes/custom/head.html
+@import "../base/_font.less";
+
+@sans: "Optima", sans-serif, "Microsoft YaHei", "STHeiti";
+@serif: "Baskerville", serif;
+@mono: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+@heading-font-family: "Verdana", @sans, sans-serif;
+@header-title-font-family: "Futura", @sans, sans-serif;
+@header-subtitle-font-family: "Futura", @sans, sans-serif;
+
+@font: @font-default;
+
+.container .mid-col .mid-col-container {
+    #content article {
+        .title {
+            font-family: "Open Sans";
+            margin-left: 0px;
+            font-size: 4em;
+            font-weight: 800;
+            line-height: 1em;
+        }
+
+        h1.title {
+            font-size: 5em;
+            font-weight: 800;
+            padding-bottom: 15px;
+
+            a {
+                color: #333;
+                -webkit-transition: color 0.3s;
+                -moz-transition: color 0.3s;
+                -o-transition: color 0.3s;
+                transition: color 0.3s;
+            }
+        }
+    }
+}

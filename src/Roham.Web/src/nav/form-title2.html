@@ -1,0 +1,21 @@
+﻿<template bindable="title, showdirty, showdelete, showundo, delete, undo">
+    <div class="form-menu-bar clearfix">
+        <ul>            
+            <li class="pull-left">
+                <button click.delegate="back()" class="pull-left btn btn-primary">
+                    <i class="fa fa-lg fa-arrow-circle-left"></i> Back
+                </button>
+                <h3 class="pull-left title">${title} ${showdirty ? ' *' : ''} </h3>
+            </li>       
+            <li class="pull-right">                
+                <button if.bind="showundo" disabled="${showdirty ? '': 'disabled'}" click.delegate="undo()" class="pull-left btn btn-primary">
+                    <i class="fa fa-undo"></i> Undo
+                </button>                
+                <slot name="ext-buttons"></slot>
+                <button if.bind="showdelete" click.delegate="delete()" class="pull-left btn btn-danger">
+                    <span class="fa fa-2x fa-trash"></span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</template>

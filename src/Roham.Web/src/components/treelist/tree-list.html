@@ -1,0 +1,12 @@
+﻿<template>
+    <require from="./tree-list.css"></require>
+    <require from='./tree-list-node'></require>
+
+    <div class="tree-list-container container-fluid">        
+        <div class ="tree-list-row row header">            
+            <div class="tree-list-cell ${col.class}" repeat.for="col of columns"><div class="cell-inner" data-type="${col.type}">${col.displayName}</div></div>            
+        </div>
+        <tree-list-node repeat.for="node of nodes" model.bind="node" columns.bind="columns"></tree-list-node>
+    </div>
+    
+</template>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/greyshade/greyshade.css" rel="stylesheet" type="text/css" />
+    @if (ViewBag.Styles != null)
+    {
+        foreach (var style in ViewBag.Styles)
+        {
+            <link href="@style" rel="stylesheet" type="text/css" />
+        }
+    }    
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container"> 
+        <div class="left-col">
+            <div class="intrude-less">
+                <header id="header" class="inner">
+                    <div class="profilepic">
+                        <img src="~/Content/roham/images/brand.png" alt="Profile Picture" style="width: 160px;">
+                    </div>
+                    <hgroup>
+                        <h1>Title</h1>
+                        <h2>Sub Title</h2>
+                    </hgroup>
+                    <nav id="main-nav">
+                        <ul class="main-navigation">
+                            <li><a href="/about/">about</a></li>
+                            <li><a href="/archive">archives</a></li>
+                            <li><a href="https://github.com/Haacked/feedback/issues/new">contact</a></li>
+                            <li><a href="/contributors">contributors</a></li>
+                        </ul>
+                        <section class="aboutme">
+                            <p>
+                                You've been Haacked and you like it
+                            </p>
+                        </section>
+                    </nav>
+
+                    <nav id="sub-nav">
+                        <div class="social">
+                            <a class="twitter" href="http://twitter.com/albert1945" title="Twitter">Twitter</a>
+                            <a class="github" href="https://github.com/HojjatK" title="GitHub">GitHub</a>
+                            <a class="rss" href="http://dev.example.com/HojjatK" title="RSS">RSS</a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <div class="mid-col">
+            <div class="mid-col-container">
+                <div id="content" class="inner">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

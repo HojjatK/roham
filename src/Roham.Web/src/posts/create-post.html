@@ -1,0 +1,83 @@
+﻿<template>
+    <require from="./../validation-summary.html"></require>
+    <require from="./../nav/form-title.html"></require>
+    <require from="./../dirty"></require>    
+    <require from="./../feature-tinymce/tiny-mce"></require>
+    <require from="./../components/select-picker"></require>
+    <require from="./post-options.html"></require>    
+
+    <form-title title.bind="viewTitle" showdirty.bind="isDirty" showundo.bind="showUndo" showdelete.bind="showDelete" back.call="goBack()" undo.call="undo()"></form-title>
+
+    <form name="postForm" class="form-horizontal" role="form"
+          dirty.bind="isDirty"
+          submit.delegate="createPost()"
+          validation-renderer="bootstrap-form"
+          validation-errors.bind="errors">
+
+        <validation-summary errors.bind="errors"
+                            autofocus.bind="controller.validateTrigger === 'manual'">
+        </validation-summary>
+
+        <div id="post-tab" class="container">
+            <div class="row">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#post-content" data-toggle="tab">Content</a>
+                    </li>
+                    <li>
+                        <a href="#post-options" data-toggle="tab">Options</a>
+                    </li>
+                </ul>
+
+                <div class="form-group">
+                    <label class="col-2" for="site">Site *</label>
+                    <div class="col-4">
+                        <select-picker name="postSite" selectable-values.bind="availableSites" selected-value.two-way="model.siteId" changed.call="onSiteChanged($newValue, $oldValue)"></select-picker>
+                    </div>
+
+                    <label class="col-2" for="site">Zone *</label>
+                    <div class="col-4">
+                        <select-picker name="postZone" selectable-values.bind="availableZones" selected-value.two-way="model.zoneId"></select-picker>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2" for="site">Title *</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="postTitle" name="postTitle" change.delegate="onTitleChanged($event)" value.bind="model.title & validate" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">                
+                <div class="tab-content clearfix">
+                    <div class="tab-pane active" id="post-content">
+                        <tiny-mce value.bind="model.content" view-model.ref="tinyMce"></tiny-mce>
+                    </div>
+                    <div class="tab-pane" id="post-options">
+                        <post-options model.bind="model" templatechanged.call="onTemplateChanged($newValue, $oldValue)" displaydatechanged.call="onDisplayPublishChanged()"></post-options>
+                    </div>
+                </div>
+            </div>            
+
+            <br/>
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-sm-2" for="metaTitle">Labels</label>
+                    <div class="col-sm-12">
+                        <input class="form-control" id="tagsCommaSeparated" data-role="tagsinput" name="tagsCommaSeparated" value.bind="model.tagsCommaSeparated & validate" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    <button type="submit" disabled.bind="!isDirty" class="btn btn-default">Create</button>
+                </div>
+                <div class="col-6">
+                </div>
+            </div>
+        </div>
+
+    </form>
+</template>

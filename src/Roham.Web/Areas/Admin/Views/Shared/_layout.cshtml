@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@WebAppInfo.Name Admin</title>
+    <!--The FontAwesome version is locked at 4.6.3 in the package.json file to keep this from breaking.-->    
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css"/>    
+    <link href="~/Content/toastr.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/roham/admin.css" rel="stylesheet" type="text/css" />
+    
+    @RenderSection("Styles", false)
+</head>
+<body>
+    @RenderBody()
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    
+    <script src="~/Scripts/toastr.min.js"></script>
+    <script src="~/Scripts/bootstrap-tagsinput.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+
+    <span id="device" style="width:0;height:0;visibility:hidden"></span>    
+</body>
+</html>

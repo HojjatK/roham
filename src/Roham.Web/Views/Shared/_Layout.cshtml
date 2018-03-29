@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/roham/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/greyshade/greyshade.css" rel="stylesheet" type="text/css" />
+    @if (ViewBag.Styles != null)
+    {
+        foreach (var style in ViewBag.Styles)
+        {
+            <link href="@style" rel="stylesheet" type="text/css" />
+        }
+    }    
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="wrap">
+        <header class="main-header">
+            @Html.Partial("_NavbarPartial")
+        </header>
+
+        <div class="wrap-inner">
+            <section class="main-content">
+                <div class="container">
+                    @RenderBody()
+                </div>
+            </section>
+
+            <footer class="main-footer">
+                <div class="container">
+                    <p class="text-left">
+                        <br />
+                        <br />
+                        @WebAppInfo.Copyright <br />
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <span id="device" style="width:0;height:0;visibility:hidden"></span>
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,351 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\typings.json",
+    "raw": "npm:aurelia-validation",
+    "main": "dist/aurelia-validation.d.ts",
+    "version": "0.10.1",
+    "global": false,
+    "dependencies": {
+      "aurelia-binding": {
+        "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-binding\\typings.json",
+        "raw": "npm:aurelia-binding",
+        "main": "dist/aurelia-binding.d.ts",
+        "version": "1.0.0-rc.1.0.3",
+        "global": false,
+        "dependencies": {
+          "aurelia-logging": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-binding\\node_modules\\aurelia-logging\\typings.json",
+            "raw": "npm:aurelia-logging",
+            "main": "dist/aurelia-logging.d.ts",
+            "version": "1.0.0-rc.1.0.1",
+            "global": false,
+            "name": "aurelia-logging"
+          },
+          "aurelia-metadata": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-metadata\\typings.json",
+            "raw": "npm:aurelia-metadata",
+            "main": "dist/aurelia-metadata.d.ts",
+            "version": "1.0.0-rc.1.0.1",
+            "global": false,
+            "dependencies": {
+              "aurelia-pal": {
+                "src": "https://raw.githubusercontent.com/aurelia/pal/master/typings.json",
+                "raw": "github:aurelia/pal",
+                "main": "dist/aurelia-pal.d.ts",
+                "global": false,
+                "name": "aurelia-pal",
+                "type": "typings"
+              }
+            },
+            "name": "aurelia-metadata"
+          },
+          "aurelia-pal": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-binding\\node_modules\\aurelia-pal\\typings.json",
+            "raw": "npm:aurelia-pal",
+            "main": "dist/aurelia-pal.d.ts",
+            "version": "1.0.0-rc.1.0.0",
+            "global": false,
+            "name": "aurelia-pal"
+          },
+          "aurelia-task-queue": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-task-queue\\typings.json",
+            "raw": "npm:aurelia-task-queue",
+            "main": "dist/aurelia-task-queue.d.ts",
+            "version": "1.0.0-rc.1.0.0",
+            "global": false,
+            "dependencies": {
+              "aurelia-pal": {
+                "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-task-queue\\node_modules\\aurelia-pal\\typings.json",
+                "raw": "npm:aurelia-pal",
+                "main": "dist/aurelia-pal.d.ts",
+                "version": "1.0.0-rc.1.0.0",
+                "global": false,
+                "name": "aurelia-pal"
+              }
+            },
+            "name": "aurelia-task-queue"
+          }
+        },
+        "name": "aurelia-binding"
+      },
+      "aurelia-dependency-injection": {
+        "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-dependency-injection\\typings.json",
+        "raw": "npm:aurelia-dependency-injection",
+        "main": "dist/aurelia-dependency-injection.d.ts",
+        "version": "1.0.0-rc.1.0.1",
+        "global": false,
+        "dependencies": {
+          "aurelia-metadata": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-metadata\\typings.json",
+            "raw": "npm:aurelia-metadata",
+            "main": "dist/aurelia-metadata.d.ts",
+            "version": "1.0.0-rc.1.0.1",
+            "global": false,
+            "dependencies": {
+              "aurelia-pal": {
+                "src": "https://raw.githubusercontent.com/aurelia/pal/master/typings.json",
+                "raw": "github:aurelia/pal",
+                "main": "dist/aurelia-pal.d.ts",
+                "global": false,
+                "name": "aurelia-pal",
+                "type": "typings"
+              }
+            },
+            "name": "aurelia-metadata"
+          },
+          "aurelia-pal": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-dependency-injection\\node_modules\\aurelia-pal\\typings.json",
+            "raw": "npm:aurelia-pal",
+            "main": "dist/aurelia-pal.d.ts",
+            "version": "1.0.0-rc.1.0.0",
+            "global": false,
+            "name": "aurelia-pal"
+          }
+        },
+        "name": "aurelia-dependency-injection"
+      },
+      "aurelia-metadata": {
+        "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-metadata\\typings.json",
+        "raw": "npm:aurelia-metadata",
+        "main": "dist/aurelia-metadata.d.ts",
+        "version": "1.0.0-rc.1.0.1",
+        "global": false,
+        "dependencies": {
+          "aurelia-pal": {
+            "src": "https://raw.githubusercontent.com/aurelia/pal/master/typings.json",
+            "raw": "github:aurelia/pal",
+            "main": "dist/aurelia-pal.d.ts",
+            "global": false,
+            "name": "aurelia-pal",
+            "type": "typings"
+          }
+        },
+        "name": "aurelia-metadata"
+      },
+      "aurelia-task-queue": {
+        "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-task-queue\\typings.json",
+        "raw": "npm:aurelia-task-queue",
+        "main": "dist/aurelia-task-queue.d.ts",
+        "version": "1.0.0-rc.1.0.0",
+        "global": false,
+        "dependencies": {
+          "aurelia-pal": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-task-queue\\node_modules\\aurelia-pal\\typings.json",
+            "raw": "npm:aurelia-pal",
+            "main": "dist/aurelia-pal.d.ts",
+            "version": "1.0.0-rc.1.0.0",
+            "global": false,
+            "name": "aurelia-pal"
+          }
+        },
+        "name": "aurelia-task-queue"
+      },
+      "aurelia-templating": {
+        "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-templating\\typings.json",
+        "raw": "npm:aurelia-templating",
+        "main": "dist/aurelia-templating.d.ts",
+        "version": "1.0.0-rc.1.0.2",
+        "global": false,
+        "dependencies": {
+          "aurelia-binding": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-binding\\typings.json",
+            "raw": "npm:aurelia-binding",
+            "main": "dist/aurelia-binding.d.ts",
+            "version": "1.0.0-rc.1.0.3",
+            "global": false,
+            "dependencies": {
+              "aurelia-logging": {
+                "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-binding\\node_modules\\aurelia-logging\\typings.json",
+                "raw": "npm:aurelia-logging",
+                "main": "dist/aurelia-logging.d.ts",
+                "version": "1.0.0-rc.1.0.1",
+                "global": false,
+                "name": "aurelia-logging"
+              },
+              "aurelia-metadata": {
+                "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-metadata\\typings.json",
+                "raw": "npm:aurelia-metadata",
+                "main": "dist/aurelia-metadata.d.ts",
+                "version": "1.0.0-rc.1.0.1",
+                "global": false,
+                "dependencies": {
+                  "aurelia-pal": {
+                    "src": "https://raw.githubusercontent.com/aurelia/pal/master/typings.json",
+                    "raw": "github:aurelia/pal",
+                    "main": "dist/aurelia-pal.d.ts",
+                    "global": false,
+                    "name": "aurelia-pal",
+                    "type": "typings"
+                  }
+                },
+                "name": "aurelia-metadata"
+              },
+              "aurelia-pal": {
+                "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-binding\\node_modules\\aurelia-pal\\typings.json",
+                "raw": "npm:aurelia-pal",
+                "main": "dist/aurelia-pal.d.ts",
+                "version": "1.0.0-rc.1.0.0",
+                "global": false,
+                "name": "aurelia-pal"
+              },
+              "aurelia-task-queue": {
+                "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-task-queue\\typings.json",
+                "raw": "npm:aurelia-task-queue",
+                "main": "dist/aurelia-task-queue.d.ts",
+                "version": "1.0.0-rc.1.0.0",
+                "global": false,
+                "dependencies": {
+                  "aurelia-pal": {
+                    "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-task-queue\\node_modules\\aurelia-pal\\typings.json",
+                    "raw": "npm:aurelia-pal",
+                    "main": "dist/aurelia-pal.d.ts",
+                    "version": "1.0.0-rc.1.0.0",
+                    "global": false,
+                    "name": "aurelia-pal"
+                  }
+                },
+                "name": "aurelia-task-queue"
+              }
+            },
+            "name": "aurelia-binding"
+          },
+          "aurelia-dependency-injection": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-dependency-injection\\typings.json",
+            "raw": "npm:aurelia-dependency-injection",
+            "main": "dist/aurelia-dependency-injection.d.ts",
+            "version": "1.0.0-rc.1.0.1",
+            "global": false,
+            "dependencies": {
+              "aurelia-metadata": {
+                "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-metadata\\typings.json",
+                "raw": "npm:aurelia-metadata",
+                "main": "dist/aurelia-metadata.d.ts",
+                "version": "1.0.0-rc.1.0.1",
+                "global": false,
+                "dependencies": {
+                  "aurelia-pal": {
+                    "src": "https://raw.githubusercontent.com/aurelia/pal/master/typings.json",
+                    "raw": "github:aurelia/pal",
+                    "main": "dist/aurelia-pal.d.ts",
+                    "global": false,
+                    "name": "aurelia-pal",
+                    "type": "typings"
+                  }
+                },
+                "name": "aurelia-metadata"
+              },
+              "aurelia-pal": {
+                "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-dependency-injection\\node_modules\\aurelia-pal\\typings.json",
+                "raw": "npm:aurelia-pal",
+                "main": "dist/aurelia-pal.d.ts",
+                "version": "1.0.0-rc.1.0.0",
+                "global": false,
+                "name": "aurelia-pal"
+              }
+            },
+            "name": "aurelia-dependency-injection"
+          },
+          "aurelia-loader": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-templating\\node_modules\\aurelia-loader\\typings.json",
+            "raw": "npm:aurelia-loader",
+            "main": "dist/aurelia-loader.d.ts",
+            "version": "1.0.0-rc.1.0.0",
+            "global": false,
+            "dependencies": {
+              "aurelia-metadata": {
+                "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-metadata\\typings.json",
+                "raw": "npm:aurelia-metadata",
+                "main": "dist/aurelia-metadata.d.ts",
+                "version": "1.0.0-rc.1.0.1",
+                "global": false,
+                "dependencies": {
+                  "aurelia-pal": {
+                    "src": "https://raw.githubusercontent.com/aurelia/pal/master/typings.json",
+                    "raw": "github:aurelia/pal",
+                    "main": "dist/aurelia-pal.d.ts",
+                    "global": false,
+                    "name": "aurelia-pal",
+                    "type": "typings"
+                  }
+                },
+                "name": "aurelia-metadata"
+              },
+              "aurelia-path": {
+                "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-templating\\node_modules\\aurelia-path\\typings.json",
+                "raw": "npm:aurelia-path",
+                "main": "dist/aurelia-path.d.ts",
+                "version": "1.0.0-rc.1.0.0",
+                "global": false,
+                "name": "aurelia-path"
+              }
+            },
+            "name": "aurelia-loader"
+          },
+          "aurelia-logging": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-templating\\node_modules\\aurelia-logging\\typings.json",
+            "raw": "npm:aurelia-logging",
+            "main": "dist/aurelia-logging.d.ts",
+            "version": "1.0.0-rc.1.0.1",
+            "global": false,
+            "name": "aurelia-logging"
+          },
+          "aurelia-metadata": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-metadata\\typings.json",
+            "raw": "npm:aurelia-metadata",
+            "main": "dist/aurelia-metadata.d.ts",
+            "version": "1.0.0-rc.1.0.1",
+            "global": false,
+            "dependencies": {
+              "aurelia-pal": {
+                "src": "https://raw.githubusercontent.com/aurelia/pal/master/typings.json",
+                "raw": "github:aurelia/pal",
+                "main": "dist/aurelia-pal.d.ts",
+                "global": false,
+                "name": "aurelia-pal",
+                "type": "typings"
+              }
+            },
+            "name": "aurelia-metadata"
+          },
+          "aurelia-pal": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-templating\\node_modules\\aurelia-pal\\typings.json",
+            "raw": "npm:aurelia-pal",
+            "main": "dist/aurelia-pal.d.ts",
+            "version": "1.0.0-rc.1.0.0",
+            "global": false,
+            "name": "aurelia-pal"
+          },
+          "aurelia-path": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-templating\\node_modules\\aurelia-path\\typings.json",
+            "raw": "npm:aurelia-path",
+            "main": "dist/aurelia-path.d.ts",
+            "version": "1.0.0-rc.1.0.0",
+            "global": false,
+            "name": "aurelia-path"
+          },
+          "aurelia-task-queue": {
+            "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-task-queue\\typings.json",
+            "raw": "npm:aurelia-task-queue",
+            "main": "dist/aurelia-task-queue.d.ts",
+            "version": "1.0.0-rc.1.0.0",
+            "global": false,
+            "dependencies": {
+              "aurelia-pal": {
+                "src": "C:\\Hojjat\\Develop\\Roham\\src\\Roham.Web\\node_modules\\aurelia-validation\\node_modules\\aurelia-task-queue\\node_modules\\aurelia-pal\\typings.json",
+                "raw": "npm:aurelia-pal",
+                "main": "dist/aurelia-pal.d.ts",
+                "version": "1.0.0-rc.1.0.0",
+                "global": false,
+                "name": "aurelia-pal"
+              }
+            },
+            "name": "aurelia-task-queue"
+          }
+        },
+        "name": "aurelia-templating"
+      }
+    },
+    "name": "aurelia-validation"
+  }
+}

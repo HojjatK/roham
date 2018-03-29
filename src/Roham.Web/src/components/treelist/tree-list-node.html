@@ -1,0 +1,39 @@
+﻿<template>
+    <div if.bind="!model.template" 
+         show.bind="model.visible" 
+         class="tree-list-row row data ${model.hasChildren ? 'tree--node' : 'tree--leaf'} ${model.focused ? 'focused' : ''}" 
+         data-level="${model.level}"
+         click.delegate="focusNode($event, true)"
+         dblclick.delegate="dblclick($event)">
+        <div class="tree-list-cell ${columns[0].class}">
+            <div class="cell-inner title">
+                <span if.bind="model.hasChildren"
+                      click.trigger="toggleNode($event)"
+                      class="tree-node-arrow fa ${model.loading ? 'fa-spinner' : (model.expanded ? 'fa-minus-square-o' : 'fa-plus-square-o' ) }">
+                </span>
+                <span class="tree-node-title pad-right ${model.hasChildren ? '' : 'pad-left'}">
+                    <label if.bind="model.tree.multiSelect">
+                        <input type="checkbox" checked.bind="model.selected" click.delegate="toggleSelected($event, true)" />
+                    </label>${model.title}
+                </span>
+            </div>
+        </div>
+        <div class="tree-list-cell ${col.class}" repeat.for="col of columns.slice(1)">
+            <div if.bind="col.type != 'bool' && col.type != 'navigation'" class="cell-inner" data-type="${col.type}">
+                ${model.payload[col.name]}
+            </div>
+            <div if.bind="col.type == 'bool'" class="cell-inner" data-type="${col.type}">
+                <div class="checkbox-square-tick checkbox">
+                    <input type="checkbox" disabled="disabled" id="${col.name}" name="${col.name}" checked.bind="model.payload[col.name]" />
+                    <label disabled="disabled" for="${col.name}"></label>
+                </div>                
+            </div>
+            <div if.bind="col.type == 'navigation'" class="cell-inner" data-type="${col.type}">
+                  <a href="${col.nav}/${model.payload[col.name]}"><i class="fa fa-edit"></i></a>  
+            </div>
+        </div>        
+    </div>
+    <div if.bind="model.template" ref="templateTarget"></div>
+
+    <tree-list-node repeat.for="node of model.children" columns.bind="columns" model.bind="node"></tree-list-node>
+</template>

@@ -1,0 +1,146 @@
+/**
+ * atom-dark theme for `prism.js`
+ * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
+ * @author Joe Gibson (@gibsjose)
+ */
+
+code[class*="language-"][class*="theme-prism-atom-dark"] ,
+pre[class*="language-"][class*="theme-prism-atom-dark"] {
+	color: #c5c8c6;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"][class*="theme-prism-atom-dark"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"][class*="theme-prism-atom-dark"] ,
+pre[class*="language-"][class*="theme-prism-atom-dark"]  {
+	background: #1d1f21;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"][class*="theme-prism-atom-dark"]  {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.comment,
+pre[class*="theme-prism-atom-dark"]   .token.prolog,
+pre[class*="theme-prism-atom-dark"]   .token.doctype,
+pre[class*="theme-prism-atom-dark"]   .token.cdata {
+	color: #7C7C7C;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.punctuation {
+	color: #c5c8c6;
+}
+
+pre[class*="theme-prism-atom-dark"]   .namespace {
+	opacity: .7;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.property,
+pre[class*="theme-prism-atom-dark"]   .token.keyword,
+pre[class*="theme-prism-atom-dark"]   .token.tag {
+    color: #96CBFE;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.class-name {
+	color: #FFFFB6;
+	text-decoration: underline;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.boolean,
+pre[class*="theme-prism-atom-dark"]   .token.constant {
+    color: #99CC99;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.symbol,
+pre[class*="theme-prism-atom-dark"]   .token.deleted {
+	color: #f92672;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.number {
+	color: #FF73FD;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.selector,
+pre[class*="theme-prism-atom-dark"]   .token.attr-name,
+pre[class*="theme-prism-atom-dark"]   .token.string,
+pre[class*="theme-prism-atom-dark"]   .token.char,
+pre[class*="theme-prism-atom-dark"]   .token.builtin,
+pre[class*="theme-prism-atom-dark"]   .token.inserted {
+	color: #A8FF60;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.variable {
+	color: #C6C5FE;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.operator {
+    color: #EDEDED;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.entity {
+    color: #FFFFB6;
+    /* text-decoration: underline; */
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.url {
+    color: #96CBFE;
+}
+
+pre[class*="theme-prism-atom-dark"]   .language-css .token.string,
+pre[class*="theme-prism-atom-dark"]   .style .token.string {
+	color: #87C38A;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.atrule,
+pre[class*="theme-prism-atom-dark"]   .token.attr-value {
+    color: #F9EE98;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.function {
+	color: #DAD085;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.regex {
+    color: #E9C062;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.important {
+	color: #fd971f;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.important,
+pre[class*="theme-prism-atom-dark"]   .token.bold {
+	font-weight: bold;
+}
+pre[class*="theme-prism-atom-dark"]   .token.italic {
+	font-style: italic;
+}
+
+pre[class*="theme-prism-atom-dark"]   .token.entity {
+	cursor: help;
+}

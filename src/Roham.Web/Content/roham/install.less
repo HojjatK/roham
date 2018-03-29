@@ -1,0 +1,50 @@
+﻿@import "common/checkboxes.less";
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-header {
+    color: #ddd;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  #install-key-form {
+      margin: 0 20px;
+  }
+  .validation-summary-errors {
+      color: #e63838
+  }
+
+  .curtain {
+    position: fixed;
+    z-index: 99;    
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;    
+    background-color:  rgba(0, 0, 0, 0.2);    
+    background-image: url(/Content/roham/images/ajax-loader.gif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  color: #eee;
+  background-color: #202020;
+}

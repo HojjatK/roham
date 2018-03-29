@@ -1,0 +1,128 @@
+/**
+ * prism.js Dark theme for JavaScript, CSS and HTML
+ * Based on the slides of the talk “/Reg(exp){2}lained/”
+ * @author Lea Verou
+ */
+
+code[class*="language-"][class*="theme-prism-dark"],
+pre[class*="language-"][class*="theme-prism-dark"] {
+	color: white;
+	text-shadow: 0 -.1em .2em black;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+@media print {
+	code[class*="language-"][class*="theme-prism-dark"],
+	pre[class*="language-"][class*="theme-prism-dark"] {
+		text-shadow: none;
+	}
+}
+
+pre[class*="language-"][class*="theme-prism-dark"],
+:not(pre) > code[class*="language-"][class*="theme-prism-dark"] {
+	background: hsl(30, 20%, 25%);
+}
+
+/* Code blocks */
+pre[class*="language-"][class*="theme-prism-dark"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border: .3em solid hsl(30, 20%, 40%);
+	border-radius: .5em;
+	box-shadow: 1px 1px .5em black inset;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"][class*="theme-prism-dark"] {
+	padding: .15em .2em .05em;
+	border-radius: .3em;
+	border: .13em solid hsl(30, 20%, 40%);
+	box-shadow: 1px 1px .3em -.1em black inset;
+	white-space: normal;
+}
+
+pre[class*="theme-prism-dark"]  .token.comment,
+pre[class*="theme-prism-dark"]  .token.prolog,
+pre[class*="theme-prism-dark"]  .token.doctype,
+pre[class*="theme-prism-dark"]  .token.cdata {
+	color: hsl(30, 20%, 50%);
+}
+
+pre[class*="theme-prism-dark"]  .token.punctuation {
+	opacity: .7;
+}
+
+pre[class*="theme-prism-dark"]  .namespace {
+	opacity: .7;
+}
+
+pre[class*="theme-prism-dark"]  .token.property,
+pre[class*="theme-prism-dark"]  .token.tag,
+pre[class*="theme-prism-dark"]  .token.boolean,
+pre[class*="theme-prism-dark"]  .token.number,
+pre[class*="theme-prism-dark"]  .token.constant,
+pre[class*="theme-prism-dark"]  .token.symbol {
+	color: hsl(350, 40%, 70%);
+}
+
+pre[class*="theme-prism-dark"]  .token.selector,
+pre[class*="theme-prism-dark"]  .token.attr-name,
+pre[class*="theme-prism-dark"]  .token.string,
+pre[class*="theme-prism-dark"]  .token.char,
+pre[class*="theme-prism-dark"]  .token.builtin,
+pre[class*="theme-prism-dark"]  .token.inserted {
+	color: hsl(75, 70%, 60%);
+}
+
+pre[class*="theme-prism-dark"]  .token.operator,
+pre[class*="theme-prism-dark"]  .token.entity,
+pre[class*="theme-prism-dark"]  .token.url,
+pre[class*="theme-prism-dark"]  .language-css .token.string,
+pre[class*="theme-prism-dark"]  .style .token.string,
+pre[class*="theme-prism-dark"]  .token.variable {
+	color: hsl(40, 90%, 60%);
+}
+
+pre[class*="theme-prism-dark"]  .token.atrule,
+pre[class*="theme-prism-dark"]  .token.attr-value,
+pre[class*="theme-prism-dark"]  .token.keyword {
+	color: hsl(350, 40%, 70%);
+}
+
+pre[class*="theme-prism-dark"]  .token.regex,
+pre[class*="theme-prism-dark"]  .token.important {
+	color: #e90;
+}
+
+pre[class*="theme-prism-dark"]  .token.important,
+pre[class*="theme-prism-dark"]  .token.bold {
+	font-weight: bold;
+}
+pre[class*="theme-prism-dark"]  .token.italic {
+	font-style: italic;
+}
+
+pre[class*="theme-prism-dark"]  .token.entity {
+	cursor: help;
+}
+
+pre[class*="theme-prism-dark"]  .token.deleted {
+	color: red;
+}

@@ -1,0 +1,5 @@
+﻿<template>
+    <select class="btn btn-select" value.bind="selectedValue" name.bind="name" id.bind="name" multiple="multiple" >
+        <option repeat.for="p of selectableValues" value.bind="p.key">${p.value}</option>
+    </select>
+</template>

@@ -1,0 +1,33 @@
+﻿<template>
+    <section class="jobs-list">
+        <fieldset>
+            <legend>Jobs</legend>
+        </fieldset>
+
+        <div class="container-fluid">
+            <div class="row">
+                <grid read.call="getJobs($event)" grid.ref="jobsGrid" selected-item.two-way="selectedJob" dblclick.trigger="editJob()"
+                      selectable.bind="true" server-paging.bind="true" pageable.bind="false" no-rows-message="No Jobs">
+                    <grid-row>
+                        <grid-col heading="ID" field="id" class="col-md-1">${$item.id }</grid-col>
+                        <grid-col heading="Name" field="name" class="col-md-2">${ $item.name }</grid-col>
+                        <grid-col heading="Type" field="type" class="col-md-1">${ $item.type }</grid-col>
+                        <grid-col heading="Site" field="siteTitle" class="col-md-1">${ $item.siteTitle }</grid-col>
+                        <grid-col heading="Owner" field="ownerUser" class="col-md-1">${ $item.ownerUser }</grid-col>
+                        <grid-col heading="System Job" field="isSystemJob" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="isSystemJobCbx" name="isSystemJobCbx" checked.bind="$item.isSystemJob" disabled="disabled" />
+                                <label disabled="disabled" for="isSystemJobCbx"></label>
+                            </div>
+                        </grid-col>
+                        <grid-col heading="description" field="description" class="col-md-3">${ $item.description }</grid-col>
+                        <grid-col heading="created" field="created" class="col-md-1">${ $item.created }</grid-col>
+                        <grid-col heading="Action" field="action" class="col-md-1">
+                            <a href="admin#/jobs/edit/${$item.id}" class="btn"><i class="fa fa-edit"></i></a>
+                        </grid-col>
+                    </grid-row>
+                </grid>
+            </div>
+        </div>
+    </section>
+</template>

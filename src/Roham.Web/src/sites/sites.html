@@ -1,0 +1,10 @@
+﻿<template>
+    <require from="./../nav/menu-bar.html"></require>
+    <require from="./../busy-indicator.html"></require>
+    <menu-bar router.bind="router" parent.bind="viewName"></menu-bar>
+
+    <section class="pagecontent">
+        <busy-indicator busy.bind="busy"></busy-indicator>
+        <router-view></router-view>
+    </section>
+</template>

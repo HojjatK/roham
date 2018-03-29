@@ -1,0 +1,17 @@
+﻿<h1>Ooops! Error happened</h1>
+<p> 
+    @ViewBag.ErrorMessage
+</p>
+@if (ViewBag.ExpMessage != null)
+{
+    <div class="container-fluid">
+        <div class="row">
+            <textarea style="width:100%;min-height:450px;" readonly="readonly" disabled="disabled">@ViewBag.ExpMessage</textarea>
+        </div>
+    </div>
+}
+<br/>
+<br />
+<p>
+    Please try again and if the error still happend contact the adminstrator.
+</p>

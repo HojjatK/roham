@@ -1,0 +1,182 @@
+﻿[
+  {
+    "outputFile": "Content/bootstrap/bootstrap.css",
+    "inputFile": "Content/bootstrap/bootstrap.less"
+  },
+  {
+    "outputFile": "Content/roham/install.css",
+    "inputFile": "Content/roham/install.less"
+  },
+  {
+    "outputFile": "Content/roham/site.css",
+    "inputFile": "Content/roham/site.less"
+  },
+  {
+    "outputFile": "Content/roham/login.css",
+    "inputFile": "Content/roham/login.less"
+  },
+  {
+    "outputFile": "Content/roham/common/checkboxes.css",
+    "inputFile": "Content/roham/common/checkboxes.less"
+  },
+  {
+    "outputFile": "Content/roham/admin.css",
+    "inputFile": "Content/roham/admin.less"
+  },
+  {
+    "outputFile": "Content/roham/admin-nav.css",
+    "inputFile": "Content/roham/admin-nav.less"
+  },
+  {
+    "outputFile": "Content/roham/reset.css",
+    "inputFile": "Content/roham/reset.less"
+  },
+  {
+    "outputFile": "Content/roham/common/boxes.css",
+    "inputFile": "Content/roham/common/boxes.less"
+  },
+  {
+    "outputFile": "Content/roham/common/buttons.css",
+    "inputFile": "Content/roham/common/buttons.less"
+  },
+  {
+    "outputFile": "Content/roham/common/spinner.css",
+    "inputFile": "Content/roham/common/spinner.less"
+  },
+  {
+    "outputFile": "Content/roham/variables.css",
+    "inputFile": "Content/roham/variables.less"
+  },
+  {
+    "outputFile": "src/components/treeview/tree-node.css",
+    "inputFile": "src/components/treeview/tree-node.less"
+  },
+  {
+    "outputFile": "src/components/tree/tree-node.css",
+    "inputFile": "src/components/tree/tree-node.less"
+  },
+  {
+    "outputFile": "Content/roham/search-box.css",
+    "inputFile": "Content/roham/search-box.less"
+  },
+  {
+    "outputFile": "src/components/treelist/treelist-node.css",
+    "inputFile": "src/components/treelist/treelist-node.less"
+  },
+  {
+    "outputFile": "src/components/treelist/tree-list-node.css",
+    "inputFile": "src/components/treelist/tree-list-node.less"
+  },
+  {
+    "outputFile": "src/components/treelist/tree-list.css",
+    "inputFile": "src/components/treelist/tree-list.less"
+  },
+  {
+    "outputFile": "Content/greyshade/greyshade.css",
+    "inputFile": "Content/greyshade/greyshade.less"
+  },
+  {
+    "outputFile": "Content/greyshade/_base.css",
+    "inputFile": "Content/greyshade/_base.less"
+  },
+  {
+    "outputFile": "Content/greyshade/base/_color.css",
+    "inputFile": "Content/greyshade/base/_color.less"
+  },
+  {
+    "outputFile": "Content/greyshade/base/_font.css",
+    "inputFile": "Content/greyshade/base/_font.less"
+  },
+  {
+    "outputFile": "Content/greyshade/base/_layout.css",
+    "inputFile": "Content/greyshade/base/_layout.less"
+  },
+  {
+    "outputFile": "Content/greyshade/base/_typography.css",
+    "inputFile": "Content/greyshade/base/_typography.less"
+  },
+  {
+    "outputFile": "Content/greyshade/base/_utilities.css",
+    "inputFile": "Content/greyshade/base/_utilities.less"
+  },
+  {
+    "outputFile": "Content/greyshade/custom/_colors.css",
+    "inputFile": "Content/greyshade/custom/_colors.less"
+  },
+  {
+    "outputFile": "Content/greyshade/custom/_fonts.css",
+    "inputFile": "Content/greyshade/custom/_fonts.less"
+  },
+  {
+    "outputFile": "Content/greyshade/custom/_layout.css",
+    "inputFile": "Content/greyshade/custom/_layout.less"
+  },
+  {
+    "outputFile": "Content/greyshade/custom/_styles.css",
+    "inputFile": "Content/greyshade/custom/_styles.less"
+  },
+  {
+    "outputFile": "Content/greyshade/parts/_archive.css",
+    "inputFile": "Content/greyshade/parts/_archive.less"
+  },
+  {
+    "outputFile": "Content/greyshade/parts/_article.css",
+    "inputFile": "Content/greyshade/parts/_article.less"
+  },
+  {
+    "outputFile": "Content/greyshade/parts/_comment.css",
+    "inputFile": "Content/greyshade/parts/_comment.less"
+  },
+  {
+    "outputFile": "Content/greyshade/parts/_footer.css",
+    "inputFile": "Content/greyshade/parts/_footer.less"
+  },
+  {
+    "outputFile": "Content/greyshade/parts/_header.css",
+    "inputFile": "Content/greyshade/parts/_header.less"
+  },
+  {
+    "outputFile": "Content/greyshade/parts/_index.css",
+    "inputFile": "Content/greyshade/parts/_index.less"
+  },
+  {
+    "outputFile": "Content/greyshade/parts/_post.css",
+    "inputFile": "Content/greyshade/parts/_post.less"
+  },
+  {
+    "outputFile": "Content/greyshade/parts/_syntax.css",
+    "inputFile": "Content/greyshade/parts/_syntax.less"
+  },
+  {
+    "outputFile": "Content/greyshade/parts/_twitter.css",
+    "inputFile": "Content/greyshade/parts/_twitter.less"
+  },
+  {
+    "outputFile": "Content/greyshade/plugins/_fancybox.css",
+    "inputFile": "Content/greyshade/plugins/_fancybox.less"
+  },
+  {
+    "outputFile": "Content/greyshade/_custom.css",
+    "inputFile": "Content/greyshade/_custom.less"
+  },
+  {
+    "outputFile": "Content/greyshade/_parts.css",
+    "inputFile": "Content/greyshade/_parts.less"
+  },
+  {
+    "outputFile": "Content/greyshade/_plugins.css",
+    "inputFile": "Content/greyshade/_plugins.less"
+  },
+  {
+    "outputFile": "Content/greyshade/_greyshade.css",
+    "inputFile": "Content/greyshade/_greyshade.less"
+  },
+  {
+    "outputFile": "Content/roham/zone/Zone.css",
+    "inputFile": "Content/roham/zone/Zone.less"
+  },
+  {
+    "outputFile": "jspm_packages/npm/bootstrap-datetimepicker@0.0.7/src/less/bootstrap-datetimepicker.css",
+    "inputFile": "jspm_packages/npm/bootstrap-datetimepicker@0.0.7/src/less/bootstrap-datetimepicker.less"
+  }
+]

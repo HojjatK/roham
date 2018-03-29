@@ -1,0 +1,91 @@
+﻿<template>
+    <require from="./../validation-summary.html"></require>
+    <require from="./../nav/form-title.html"></require>
+    <require from="./../dirty"></require>
+    <require from="./../components/select-picker"></require>
+    <require from="./../components/multi-select"></require>
+
+    <form-title title.bind="viewTitle" showdirty.bind="isDirty" showundo.bind="showUndo" showdelete.bind="showDelete" back.call="goBack()" undo.call="undo()" delete.call="deleteUser()"></form-title>
+
+    <form name="userForm" class="form-horizontal" role="form"
+          dirty.bind="isDirty"
+          submit.delegate="saveUser()"
+          validation-renderer="bootstrap-form"
+          validation-errors.bind="errors">
+
+        <validation-summary errors.bind="errors"
+                            autofocus.bind="controller.validateTrigger === 'manual'">
+        </validation-summary>
+
+        <fieldset>
+            <div class="container">
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="email">Email *</label>                        
+                        <div class="col-4">                            
+                            <label class="form-control" id="email" name="email">${model.email}</label> 
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="userName">User Name *</label>
+                        <div class="col-4">
+                            <label class="form-control" id="userName" name="userName">${model.userName}</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="role">Roles</label>
+                        <div class="col-3">
+                            <multi-select name="role" selectable-values.bind="availableRoles" selected-value.two-way="selectedRoles"></multi-select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="site">Sites</label>
+                        <div class="col-3">
+                            <multi-select name="site" selectable-values.bind="availableSites" selected-value.two-way="selectedSites"></multi-select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="title">Title</label>
+                        <div class="col-2">
+                            <select-picker name="title" selectable-values.bind="availableTitles" selected-value.two-way="model.title"></select-picker>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="givenName">Given Name</label>
+                        <div class="col-3">
+                            <input class="form-control" id="givenName" name="givenName" value.bind="model.givenName & validate" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="givenName">Surname</label>
+                        <div class="col-4">
+                            <input class="form-control" id="surname" name="surname" value.bind="model.surname & validate" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 control-label" for="phoneNumber">Mobile</label>
+                        <div class="col-2">
+                            <input class="form-control" id="phoneNumber" name="phoneNumber" value.bind="model.phoneNumber & validate" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" disabled.bind="!isDirty" class="btn btn-default">Save</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+</template>

@@ -1,0 +1,176 @@
+/*
+ * Based on Plugin: Syntax Highlighter CB 
+ * Plugin URI: http://wp.tutsplus.com/tutorials/plugins/adding-a-syntax-highlighter-shortcode-using-prism-js
+ * Description: Highlight your code snippets with an easy to use shortcode based on Lea Verou's Prism.js.  
+ * Version: 1.0.0 
+ * Author: c.bavota 
+ * Author URI: http://bavotasan.comhttp://wp.tutsplus.com/tutorials/plugins/adding-a-syntax-highlighter-shortcode-using-prism-js/ */
+/* http://cbavota.bitbucket.org/syntax-highlighter/  */
+
+/* =====   ===== */ 
+code[class*="language-"][class*="theme-prism-cb"],
+pre[class*="language-"][class*="theme-prism-cb"] {
+	color: #fff;
+	text-shadow: 0 1px 1px #000;
+	font-family: Menlo, Monaco, "Courier New", monospace;
+	direction: ltr;
+	text-align: left;
+	word-spacing: normal;
+	white-space: pre;
+	word-wrap: normal;
+	line-height: 1.4;
+	background: none;
+	border: 0;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"][class*="theme-prism-cb"] code {
+    float: left;
+    padding: 0 15px 0 0;
+}
+
+pre[class*="language-"][class*="theme-prism-cb"],
+:not(pre) > code[class*="language-"][class*="theme-prism-cb"] {
+	background: #222;
+}
+
+/* Code blocks */
+pre[class*="language-"][class*="theme-prism-cb"] {
+	padding: 15px;
+	margin: 1em 0;
+	overflow: auto;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"][class*="theme-prism-cb"] {
+	padding: 5px 10px;
+	line-height: 1;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+pre[class*="theme-prism-cb"]  .token.comment,
+pre[class*="theme-prism-cb"]  .token.prolog,
+pre[class*="theme-prism-cb"]  .token.doctype,
+pre[class*="theme-prism-cb"]  .token.cdata {
+	color: #797979;
+}
+
+pre[class*="theme-prism-cb"]  .token.selector,
+pre[class*="theme-prism-cb"]  .token.operator,
+pre[class*="theme-prism-cb"]  .token.punctuation {
+	color: #fff;
+}
+
+pre[class*="theme-prism-cb"]  .token.namespace {
+	opacity: .7;
+}
+
+pre[class*="theme-prism-cb"]  .token.tag,
+pre[class*="theme-prism-cb"]  .token.boolean {
+	color: #ffd893;
+}
+
+pre[class*="theme-prism-cb"]  .token.atrule,
+pre[class*="theme-prism-cb"]  .token.attr-value,
+pre[class*="theme-prism-cb"]  .token.hex,
+pre[class*="theme-prism-cb"]  .token.string {
+	color: #B0C975;
+}
+
+pre[class*="theme-prism-cb"]  .token.property,
+pre[class*="theme-prism-cb"]  .token.entity,
+pre[class*="theme-prism-cb"]  .token.url,
+pre[class*="theme-prism-cb"]  .token.attr-name,
+pre[class*="theme-prism-cb"]  .token.keyword {
+	color: #c27628;
+}
+
+pre[class*="theme-prism-cb"]  .token.regex {
+	color: #9B71C6;
+}
+
+pre[class*="theme-prism-cb"]  .token.entity {
+	cursor: help;
+}
+
+pre[class*="theme-prism-cb"]  .token.function,
+pre[class*="theme-prism-cb"]  .token.constant {
+	color: #e5a638;
+}
+
+pre[class*="theme-prism-cb"]  .token.variable {
+	color: #fdfba8;
+}
+
+pre[class*="theme-prism-cb"]  .token.number {
+	color: #8799B0;
+}
+
+pre[class*="theme-prism-cb"]  .token.important,
+pre[class*="theme-prism-cb"]  .token.deliminator {
+	color: #E45734;
+}
+
+/* Line highlight plugin */
+pre[class*="theme-prism-cb"][data-line] {
+	position: relative;
+	padding: 1em 0 1em 3em;
+}
+
+pre[class*="theme-prism-cb"] .line-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-top: 1em; /* Same as .prism's padding-top */
+	background: rgba(255,255,255,.2);
+	pointer-events: none;
+	line-height: inherit;
+	white-space: pre;
+}
+
+pre[class*="theme-prism-cb"] .line-highlight:before,
+pre[class*="theme-prism-cb"] .line-highlight[data-end]:after {
+    content: attr(data-start);
+    position: absolute;
+    top: .3em;
+    left: .6em;
+    min-width: 1em;
+    padding: 0 .5em;
+    background-color: rgba(255,255,255,.3);
+    color: #fff;
+    font: bold 65%/1.5 sans-serif;
+    text-align: center;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    text-shadow: none;
+}
+
+pre[class*="theme-prism-cb"] .line-highlight[data-end]:after {
+    content: attr(data-end);
+    top: auto;
+    bottom: .4em;
+}
+
+/* for line numbers */
+pre[class*="theme-prism-cb"] .line-numbers-rows {
+	margin: 0;
+}
+
+pre[class*="theme-prism-cb"]  .line-numbers-rows span {
+    padding-right: 10px;
+    border-right: 3px #d9d336 solid;
+}

@@ -1,0 +1,62 @@
+﻿@using Roham.Web.Areas.Admin.ViewModels
+@using Roham.Resources
+
+@model InstallViewModel
+
+<div class="row">
+    <div class="form-group col-md-4 db-advanced">
+        <div>
+            <div class="checkbox-square" style="float:left">
+                @Html.CheckBoxFor(m => m.Advanced, new { @id = "chk-db-advanced" })
+                <label for="chk-db-advanced"></label>
+            </div>
+            <div class="check-box-div-label">
+                <label>@Labels.ShowConnectionString</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dbsettings-advanced" style="display:none;width:100%;">
+    <div class="form-group">        
+        @Html.TextBoxFor(m => m.SqlServer.ConnectionString, new { @class = "form-control", id="db-connstr", @style = "min-width:100%;" })
+    </div>
+</div>
+
+<div id="dbsettings">
+    <div class="row">
+        <div class="form-group col-md-4">
+            @Html.RequiredLabelFor(m => m.SqlServer.IntegratedSecurity)
+            @Html.DropDownListFor(m => m.SqlServer.IntegratedSecurity, Model.SqlServer.Authentications, new { @class = "form-control", @id = "ddl-sqlauth" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="div-dbserver" class="form-group col-md-4">
+            @Html.RequiredLabelFor(m => m.SqlServer.DatabaseServer)
+            @Html.TextBoxFor(m => m.SqlServer.DatabaseServer, new { @class = "form-control required", @required = "required" })
+        </div>
+
+        <div id="div-dbcatalog" class="form-group col-md-4">
+            @Html.RequiredLabelFor(m => m.SqlServer.DatabaseName)
+            @Html.TextBoxFor(m => m.SqlServer.DatabaseName, new { @class = "form-control required", @required = "required" })
+        </div>
+    </div>
+
+
+    @if (!Model.SqlServer.IntegratedSecurity)
+    {
+        <div class="sql-auth row">
+            <div id="div-dbuser" class="form-group col-md-4">
+                @Html.RequiredLabelFor(m => m.SqlServer.Username)
+                @Html.TextBoxFor(m => m.SqlServer.Username, new { @class = "form-control required", @required = "required" })
+            </div>
+
+            <div id="div-dbpassword" class="form-group col-md-4">
+                @Html.RequiredLabelFor(m => m.SqlServer.Password)
+                @Html.PasswordFor(m => m.SqlServer.Password, new { @class = "form-control required", @required = "required" })
+            </div>
+        </div>
+    }
+</div>
+

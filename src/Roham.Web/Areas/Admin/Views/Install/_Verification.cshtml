@@ -1,0 +1,28 @@
+﻿@using Roham.Web.Areas.Admin.ViewModels
+@using Roham.Resources
+
+@model InstallViewModel
+
+<div class="container" style="max-width: 640px;">    
+    <p style="margin: 0 auto;text-align:center">
+        <br />     
+        @ScreenTexts.Install_KeyVerificationDescription.Fmt(WebAppInfo.Name)
+    </p>
+    <br />
+    <section id="key-section" class="well">
+        @using (Html.BeginForm("verifykey", "install", FormMethod.Post, new { @id = "install-key-form", @class = "form-horizontal", role = "form" }))
+        {
+            <div class="form-group">
+                @Html.RequiredLabelFor(m => m.InstallationKey)
+                @Html.TextBoxFor(m => m.InstallationKey, new { @id = "installation-key", @class = "form-control", @required = "required" })
+            </div>
+            <div class="form-group">
+                <button id="verfiy-key" type="submit" class="pull-right btn btn-primary">@Labels.VerifyKey</button>
+            </div>
+            @Html.ValidationSummary()
+
+            @Html.HiddenFor(m => m.Uid);
+            @Html.HiddenFor(m => m.IsInstalled, "IsInstalled")
+        }
+    </section>
+</div>

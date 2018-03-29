@@ -1,0 +1,41 @@
+﻿<template>
+    <section class="post-series">
+        <fieldset>
+            <legend>Post Series</legend>
+        </fieldset>
+
+        <div class="container-fluid">
+            <div class="row">
+                <grid read.call="getSeries($event)" grid.ref="seriesGrid" selected-item.two-way="selectedSerie" dblclick.trigger="editSerie()"
+                      selectable.bind="true" server-paging.bind="true" pageable.bind="false" no-rows-message="No Series">
+                    <grid-row>
+                        <grid-col heading="ID" field="id" class="col-md-1">${$item.id }</grid-col>
+                        <grid-col heading="Title" field="title" class="col-md-4">${ $item.title }</grid-col>
+                        <grid-col heading="Private" field="isPrivate" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="isPrivateCbx" name="isPrivateCbx" checked.bind="$item.isPrivate" disabled="disabled" />
+                                <label for="isPrivateCbx"></label>
+                            </div>
+                        </grid-col>
+                        <grid-col heading="Description" field="description" class="col-md-4">${ $item.description}</grid-col>
+                        <grid-col heading="Action" field="action" class="col-md-2">
+                            <a href="admin#/posts/series/edit/${$item.id}" class="btn"><i class="fa fa-edit"></i></a>
+                        </grid-col>
+                    </grid-row>
+                </grid>
+            </div>
+
+            <br/>
+            <div class="row">
+                <ul>
+                    <li class="pull-left" style="list-style:none">                        
+                        <button click.delegate="newSerie()" class="pull-left btn btn-default">
+                            <i class="fa fa-star"></i> New Serie
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </section>
+</template>

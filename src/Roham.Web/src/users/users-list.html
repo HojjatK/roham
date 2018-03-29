@@ -1,0 +1,49 @@
+﻿<template>
+    <section class="users-list">
+        <fieldset>
+            <legend>Users</legend>
+        </fieldset>
+
+        <div class="container-fluid">
+            <div class="row">
+                <grid read.call="getUsers($event)" grid.ref="usersGrid" selected-item.two-way="selectedUser" dblclick.trigger="editUser()"
+                      selectable.bind="true" server-paging.bind="true" pageable.bind="false" no-rows-message="No Users">
+                    <grid-row>
+                        <grid-col heading="ID" field="id" class="col-md-1">${$item.id }</grid-col>
+                        <grid-col heading="Email" field="email" class="col-md-2">${ $item.email }</grid-col>
+                        <grid-col heading="Name" field="fullName" class="col-md-2">${ $item.fullName }</grid-col>                                                
+                        <grid-col heading="Mobile" field="phoneNumber" class="col-md-1">${ $item.phoneNumber }</grid-col>
+                        <grid-col heading="Status" field="status" class="col-md-1">${ $item.status }</grid-col>
+                        <grid-col heading="Locked" field="lockoutEnabled" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="lockoutEnabledCbx" name="lockoutEnabledCbx" checked.bind="$item.lockoutEnabled" disabled="disabled" />
+                                <label for="lockoutEnabledCbx"></label>
+                            </div>
+                        </grid-col>
+                        <grid-col heading="Email Confirmed" field="emailConfirm" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="emailConfirmCbx" name="emailConfirmCbx" checked.bind="$item.emailConfirm" disabled="disabled" />
+                                <label for="emailConfirmCbx"></label>
+                            </div>
+                        </grid-col>
+                        <grid-col heading="Two Factor" field="twoFactorEnabled" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="twoFactorEnabledCbx" name="twoFactorEnabledCbx" checked.bind="$item.twoFactorEnabled" disabled="disabled" />
+                                <label for="twoFactorEnabledCbx"></label>
+                            </div>
+                        </grid-col>
+                        <grid-col heading="System User" field="isSystemUser" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="isSystemUserCbx" name="isSystemUserCbx" checked.bind="$item.isSystemUser" disabled="disabled" />
+                                <label for="isSystemUserCbx"></label>
+                            </div>
+                        </grid-col>
+                        <grid-col heading="Action" field="action" class="col-md-1">
+                            <a href="admin#/users/edit/${$item.id}" class="btn"><i class="fa fa-edit"></i></a>
+                        </grid-col>
+                    </grid-row>
+                </grid>
+            </div>
+        </div>
+    </section>
+</template>

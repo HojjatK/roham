@@ -1,0 +1,14 @@
+﻿<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <ul class="navbar-nav pull-left">
+            <li>
+                <a href='@Url.Action("Index", "Home")'>
+                    <img src="~/Content/roham/images/brand.png" width="80" height="60" /> @WebAppInfo.Name
+                </a>
+            </li>            
+        </ul>
+        <ul class="navbar-nav login-nav pull-right" style="margin-right:0px;">
+            @Html.Partial("_LoginPartial")
+        </ul>        
+    </div>
+</nav>

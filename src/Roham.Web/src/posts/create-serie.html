@@ -1,0 +1,70 @@
+﻿<template>
+    <require from="./../validation-summary.html"></require>
+    <require from="./../nav/form-title.html"></require>
+    <require from="./../dirty"></require>
+    <require from="./../components/select-picker"></require>
+
+    <form-title title.bind="viewTitle" showdirty.bind="isDirty" showundo.bind="showUndo" showdelete.bind="showDelete" back.call="goBack()" undo.call="undo()"></form-title>
+
+    <form name="postSerieForm" class="form-horizontal" role="form"
+          dirty.bind="isDirty"
+          submit.delegate="createPostSerie()"
+          validation-renderer="bootstrap-form"
+          validation-errors.bind="errors">
+    </form>
+
+    <validation-summary errors.bind="errors"
+                        autofocus.bind="controller.validateTrigger === 'manual'">
+    </validation-summary>
+
+    <div class="container form-horizontal">
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2" for="site">Site *</label>
+                <div class="col-4">
+                    <select-picker name="postSite" selectable-values.bind="availableSites" selected-value.two-way="model.siteId" changed.call="onSiteChanged($newValue, $oldValue)"></select-picker>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-sm-2" for="serieTitle">Title *</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="serieTitle" name="serieTitle" change.delegate="onTitleChanged($event)" value.bind="model.title & validate" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2">Private Serie</label>
+                <div class="col-2">
+                    <div class="checkbox-square">
+                        <input type="checkbox" id="isPrivate" name="isPrivate" checked.bind="model.isPrivate" />
+                        <label for="isPrivate"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2" for="description">Description</label>
+                <div class="col-6">
+                    <textarea class="form-control" id="description" name="description" value.bind="model.description & validate"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2">
+                <button type="submit" disabled.bind="!isDirty" class="btn btn-default">Create</button>
+            </div>
+            <div class="col-6">
+            </div>
+        </div>
+
+    </div>
+
+</template>

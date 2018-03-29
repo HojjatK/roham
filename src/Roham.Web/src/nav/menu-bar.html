@@ -1,0 +1,13 @@
+﻿<template bindable="router, parent">
+    <section class="menu-bar">
+        <nav class="menu-bar-nav" role="navigation">
+            <ul>                 
+                <li repeat.for="row of router.navigation">
+                    <a href.bind="row.href" class="btn ${row.isActive ? 'active' : ''}">
+                        <i class="${row.settings.icon}"></i> ${row.title}
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+</template>

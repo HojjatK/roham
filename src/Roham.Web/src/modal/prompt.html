@@ -1,0 +1,33 @@
+﻿<template>
+    <style>
+        ai-dialog {
+            max-width: 550px;
+        }
+        ai-dialog .fa-info-circle {
+            color: aqua;
+        }
+        ai-dialog .fa-exclamation-triangle {
+            color: orange;
+        }
+        ai-dialog .fa-minus-circle {
+            color: orangered;
+        }
+    </style>
+    <ai-dialog>
+        <ai-dialog-header>   
+            <div class="row">
+                <div class="col-md-2"><i class="fa fa-2x ${icon}"></i></div>
+                <div class="col-md-10">${title}</div>
+            </div>
+        </ai-dialog-header>
+
+        <ai-dialog-body>
+            <h2>${message}</h2>
+        </ai-dialog-body>
+
+        <ai-dialog-footer>            
+            <input type="button" show.bind="showCancel" click.trigger="controller.close()" class="pull-left btn btn-deafult" value="${cancelTitle}" />
+            <input type="button" click.trigger="controller.ok()" class="btn ${btnClass}" value="${okTitle}" />            
+        </ai-dialog-footer>
+    </ai-dialog>
+</template>

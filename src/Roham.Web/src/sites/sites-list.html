@@ -1,0 +1,81 @@
+﻿<template>
+    <section class="sites-list">
+        <fieldset>
+            <legend>Sites</legend>
+        </fieldset>
+        <div class="container-fluid">
+            <div class="row">
+                <grid read.call="getSites($event)" grid.ref="sitesGrid" selected-item.two-way="selectedSite" dblclick.trigger="editSite()"
+                      selectable.bind="true" server-paging.bind="true" pageable.bind="false" no-rows-message="No Sites">
+                    <grid-row>
+                        <grid-col heading="ID" field="id" class="col-md-1">${$item.id}</grid-col>
+                        <grid-col heading="Title" field="title" class="col-md-2">${$item.title}</grid-col>
+                        <grid-col heading="Friendly Url" field="name" class="col-md-2">
+                            <a href="/${$item.name}" target="_blank">${$item.name}</a>
+                        </grid-col>
+                        <grid-col heading="Descritpion" field="description" class="col-md-3">${$item.description}</grid-col>
+                        <grid-col heading="Active" field="isActive" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="isActiveCbx${item.id}" name="isActiveCbx${item.id}" checked.bind="$item.isActive" disabled="disabled"/>
+                                <label disabled="disabled" for="isActiveCbx${item.id}"></label>
+                            </div>
+                        </grid-col>
+                        <grid-col heading="Default" field="isDefault" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="isDefaultCbx${item.id}" name="isDefaultCbx${item.id}" checked.bind="$item.isDefault" disabled="disabled"/>
+                                <label disabled="disabled" for="isDefaultCbx${item.id}"></label>
+                            </div>
+                        </grid-col>
+                        <grid-col heading="Public" field="isPublic" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="isPublicCbx${item.id}" name="isPublicCbx${item.id}" checked.bind="$item.isPublic" disabled="disabled"/>
+                                <label disabled="disabled" for="isPublicCbx${item.id}"></label>
+                            </div>
+                        </grid-col>         
+                        <grid-col heading="Action" field="action" class="col-md-1">
+                            <a href="admin#/sites/edit/${$item.id}" class="btn"><i class="fa fa-edit"></i></a>
+                        </grid-col>
+                    </grid-row>
+                </grid>
+            </div>            
+        </div>
+
+        <br/>
+
+        <fieldset>
+            <legend>${selectedSite.title} Zones</legend>
+        </fieldset>    
+        <div class="container-fluid">
+            <div class="row">
+                <grid read.call="getZones($event)" grid.ref="zonesGrid" selected-item.two-way="selectedZone" dblclick.trigger="editZone()" 
+                      selectable.bind="true" server-paging.bind="true" pageable.bind="false" no-rows-message="No Zones">
+                    <grid-row>
+                        <grid-col heading="ID" field="id" class="col-md-1">${ $item.id }</grid-col>                        
+                        <grid-col heading="Title" field="title" class="col-md-2">${$item.title}</grid-col>
+                        <grid-col heading="Friendly Url" field="name" class="col-md-2">
+                            <a href="/${$item.siteName}/${$item.name}" target="_blank">${$item.name}</a>
+                        </grid-col>
+                        <grid-col heading="Type" field="title" class="col-md-2">${ $item.zoneType }</grid-col>
+                        <grid-col heading="Descritpion" field="description" class="col-md-2">${ $item.description }</grid-col>
+                        <grid-col heading="Active" field="isActive" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="isActiveCbx${item.id}" name="isActiveCbx${item.id}" checked.bind="$item.isActive" disabled="disabled"/>
+                                <label disabled="disabled" for="isActiveCbx${item.id}"></label>
+                            </div>
+                        </grid-col>
+                        <grid-col heading="Public" field="isPublic" class="col-md-1">
+                            <div class="checkbox-square-tick">
+                                <input type="checkbox" id="isPublicCbx${item.id}" name="isPublicCbx${item.id}" checked.bind="$item.isPublic" disabled="disabled"/>
+                                <label disabled="disabled" for="isPublicCb${item.id}x"></label>
+                            </div>
+                        </grid-col>
+                        <grid-col heading="Action" field="action" class="col-md-1">
+                            <a href="admin#/sites/${$item.siteId}/zones/edit/${$item.id}" class="btn"><i class="fa fa-edit"></i></a>
+                        </grid-col>
+                    </grid-row>
+                </grid>
+            </div>            
+        </div>    
+       
+    </section>
+</template>

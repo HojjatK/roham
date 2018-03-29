@@ -1,0 +1,119 @@
+/**
+ * GHColors theme by Avi Aryan (http://aviaryan.in)
+ * Inspired by Github syntax coloring
+ */
+
+code[class*="language-"][class*="theme-prism-ghcolors"],
+pre[class*="language-"][class*="theme-prism-ghcolors"] {
+    color: #393A34;
+    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    font-size: 0.95em;
+    line-height: 1.2em;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre[class*="language-"][class*="theme-prism-ghcolors"]::-moz-selection, pre[class*="language-"] [class*="theme-prism-ghcolors"]::-moz-selection,
+code[class*="language-"][class*="theme-prism-ghcolors"]::-moz-selection, code[class*="language-"][class*="theme-prism-ghcolors"] ::-moz-selection {
+    background: #b3d4fc;
+}
+
+pre[class*="language-"][class*="theme-prism-ghcolors"]::selection, pre[class*="language-"][class*="theme-prism-ghcolors"] ::selection,
+code[class*="language-"][class*="theme-prism-ghcolors"]::selection, code[class*="language-"][class*="theme-prism-ghcolors"] ::selection {
+    background: #b3d4fc;
+}
+
+/* Code blocks */
+pre[class*="language-"][class*="theme-prism-ghcolors"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+    border: 1px solid #dddddd;
+    background-color: white;
+}
+
+:not(pre) > code[class*="language-"][class*="theme-prism-ghcolors"],
+pre[class*="language-"] {
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"][class*="theme-prism-ghcolors"] {
+    padding: .2em;
+    padding-top: 1px; padding-bottom: 1px;
+    background: #f8f8f8;
+    border: 1px solid #dddddd;
+}
+
+pre[class*="theme-prism-ghcolors"]  .token.comment,
+pre[class*="theme-prism-ghcolors"]  .token.prolog,
+pre[class*="theme-prism-ghcolors"]  .token.doctype,
+pre[class*="theme-prism-ghcolors"]  .token.cdata {
+    color: #999988; font-style: italic;
+}
+
+pre[class*="theme-prism-ghcolors"]  .token.namespace {
+    opacity: .7;
+}
+
+pre[class*="theme-prism-ghcolors"]  .token.string,
+pre[class*="theme-prism-ghcolors"]  .token.attr-value {
+    color: #e3116c;
+}
+pre[class*="theme-prism-ghcolors"]  .token.punctuation,
+pre[class*="theme-prism-ghcolors"]  .token.operator {
+    color: #393A34; /* no highlight */
+}
+
+pre[class*="theme-prism-ghcolors"]  .token.entity,
+pre[class*="theme-prism-ghcolors"]  .token.url,
+pre[class*="theme-prism-ghcolors"]  .token.symbol,
+pre[class*="theme-prism-ghcolors"]  .token.number,
+pre[class*="theme-prism-ghcolors"]  .token.boolean,
+pre[class*="theme-prism-ghcolors"]  .token.variable,
+pre[class*="theme-prism-ghcolors"]  .token.constant,
+pre[class*="theme-prism-ghcolors"]  .token.property,
+pre[class*="theme-prism-ghcolors"]  .token.regex,
+pre[class*="theme-prism-ghcolors"]  .token.inserted {
+    color: #36acaa;
+}
+
+pre[class*="theme-prism-ghcolors"]  .token.atrule,
+pre[class*="theme-prism-ghcolors"]  .token.keyword,
+pre[class*="theme-prism-ghcolors"]  .token.attr-name,
+pre[class*="theme-prism-ghcolors"]  .language-autohotkey .token.selector {
+    color: #00a4db;
+}
+
+pre[class*="theme-prism-ghcolors"]  .token.function,
+pre[class*="theme-prism-ghcolors"]  .token.deleted,
+pre[class*="theme-prism-ghcolors"]  .language-autohotkey .token.tag {
+    color: #9a050f;
+}
+
+pre[class*="theme-prism-ghcolors"]  .token.tag,
+pre[class*="theme-prism-ghcolors"]  .token.selector,
+pre[class*="theme-prism-ghcolors"]  .language-autohotkey .token.keyword {
+    color: #00009f;
+}
+
+pre[class*="theme-prism-ghcolors"]  .token.important,
+pre[class*="theme-prism-ghcolors"]  .token.function,
+pre[class*="theme-prism-ghcolors"]  .token.bold {
+    font-weight: bold;
+}
+
+pre[class*="theme-prism-ghcolors"]  .token.italic {
+    font-style: italic;
+}

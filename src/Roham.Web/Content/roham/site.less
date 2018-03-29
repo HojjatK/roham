@@ -1,0 +1,50 @@
+﻿@import "common/checkboxes.less";
+@import "login.less";
+
+.navbar-nav > li {
+    list-style: none;
+}
+
+.navbar-nav > li > a:hover { 
+    text-decoration: none;
+}
+
+body {
+    color: #111;    
+    background-color: rgb(238, 238, 238);
+}
+
+.main-header {
+    background: #eee;
+    .navbar {
+        ul {
+            padding-left: 0px;
+        }
+    }
+}
+.wrap {
+    background: white;
+
+    .main-header{
+        .navbar .login-nav {
+            margin-right: 0px;
+        }
+    }
+
+    .main-content{
+        min-height: 640px;      
+    }
+
+    .main-footer {
+        background-color: rgb(238, 238, 238);
+        color: rgb(118, 118, 118);
+
+        .container {                        
+            > p {
+                border-top: 1px solid;
+                border-top-color: rgb(225, 225, 225);
+                margin-top: 30px;
+            }
+        }
+    }
+}

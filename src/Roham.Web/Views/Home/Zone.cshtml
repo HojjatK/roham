@@ -1,0 +1,32 @@
+﻿@model Roham.Web.ViewModels.ZoneViewModel
+@{
+    Layout = "~/Views/Shared/_ZoneLayout.cshtml";
+    ViewBag.Title = Model.Title;
+}
+
+<div>
+    @foreach (var postModel in Model.Posts)
+    {
+        <article class="post">
+            <h1 class="title"><a href="~/@postModel.Uri">@postModel.Title</a></h1>
+            <div class="meta">
+                <span class="date">
+                    <time datetime="2016-10-12T00:00:00+00:00" itemprop="datePublished">@postModel.DisplayDate</time>
+                </span>
+                <span class="tags">@postModel.Tags</span>
+                <span class="comments"><a href="/archive/2016/10/12/the-hard-skills/#disqus_thread">@postModel.CommentsCount comment</a></span>
+
+                <span class="edit">
+                    <a href="#"></a>
+                </span>
+            </div>
+            <div class="entry-content" itemprop="articleBody">
+                @Html.Raw(postModel.HtmlContent)
+            </div>
+        </article>
+    }
+</div>
+<nav id="pagenavi">
+    <a href="/page/2" class="next">Next</a>
+    <div class="center"><a href="/archive">Blog Archives</a></div>
+</nav>

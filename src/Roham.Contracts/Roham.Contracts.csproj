@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB3630BF-53AF-4D5A-9150-1988DAC6D71B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Roham.Contracts</RootNamespace>
+    <AssemblyName>Roham.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\Category\AddCategoryCommand.cs" />
+    <Compile Include="Commands\Category\DeleteCategoryCommand.cs" />
+    <Compile Include="Commands\Category\UpdateCategoryCommand.cs" />
+    <Compile Include="Commands\EntrySerie\AddEntrySerieCommand.cs" />
+    <Compile Include="Commands\EntrySerie\DeleteEntrySerieCommand.cs" />
+    <Compile Include="Commands\EntrySerie\UpdateEntrySerieCommand.cs" />
+    <Compile Include="Commands\Job\AddJobCommand.cs" />
+    <Compile Include="Commands\Job\DeleteJobCommand.cs" />
+    <Compile Include="Commands\Job\DeleteTaskCommand.cs" />
+    <Compile Include="Commands\Job\ExecuteTaskCommand.cs" />
+    <Compile Include="Commands\Job\UpdateJobCommand.cs" />
+    <Compile Include="Commands\Portal\InstallPortalCommand.cs" />
+    <Compile Include="Commands\Portal\UpdatePortalCommand.cs" />
+    <Compile Include="Commands\Post\AddCommentCommand.cs" />
+    <Compile Include="Commands\Post\AddPostSerieCommand.cs" />
+    <Compile Include="Commands\Post\DeletePostSerieCommand.cs" />
+    <Compile Include="Commands\Post\NewPostCommand.cs" />
+    <Compile Include="Commands\Post\AddPostTagCommand.cs" />
+    <Compile Include="Commands\Post\AddPostToCategoryCommand.cs" />
+    <Compile Include="Commands\Post\DeleteCommentCommand.cs" />
+    <Compile Include="Commands\Post\DeletePostCommand.cs" />
+    <Compile Include="Commands\Post\DeletePostTagCommand.cs" />
+    <Compile Include="Commands\Post\MarkCommentAsSpamCommand.cs" />
+    <Compile Include="Commands\Post\RatePostCommand.cs" />
+    <Compile Include="Commands\Post\RemovePostFromCategoryCommand.cs" />
+    <Compile Include="Commands\Post\RevisePostCommand.cs" />
+    <Compile Include="Commands\Post\SavePostCommand.cs" />
+    <Compile Include="Commands\Post\UpdateCommentCommand.cs" />
+    <Compile Include="Commands\Post\UpdatePostSerieCommand.cs" />
+    <Compile Include="Commands\Role\AddRoleCommand.cs" />
+    <Compile Include="Commands\Role\DeleteRoleCommand.cs" />
+    <Compile Include="Commands\Role\UpdateRoleCommand.cs" />
+    <Compile Include="Commands\Setting\SetPortalSettingToDefaultCommand.cs" />
+    <Compile Include="Commands\Setting\SetSettingToDefaultCommand.cs" />
+    <Compile Include="Commands\Setting\SetSiteSettingToDefaultCommand.cs" />
+    <Compile Include="Commands\Setting\UpdatePortalSettingCommand.cs" />
+    <Compile Include="Commands\Setting\UpdateSettingCommand.cs" />
+    <Compile Include="Commands\Setting\UpdateSiteSettingCommand.cs" />
+    <Compile Include="Commands\Site\AddSiteCommand.cs" />
+    <Compile Include="Commands\Site\DeleteSiteCommand.cs" />
+    <Compile Include="Commands\Site\UpdateSiteCommand.cs" />
+    <Compile Include="Commands\User\AddUserClaimCommand.cs" />
+    <Compile Include="Commands\User\AddUserCommand.cs" />
+    <Compile Include="Commands\User\AddUserLoginCommand.cs" />
+    <Compile Include="Commands\User\AddUserRoleCommand.cs" />
+    <Compile Include="Commands\User\ChangePasswordCommand.cs" />
+    <Compile Include="Commands\User\DeleteUserClaimCommand.cs" />
+    <Compile Include="Commands\User\DeleteUserCommand.cs" />
+    <Compile Include="Commands\User\DeleteUserRoleCommand.cs" />
+    <Compile Include="Commands\User\RemoveUserLoginCommand.cs" />
+    <Compile Include="Commands\User\SetSecurityStampCommand.cs" />
+    <Compile Include="Commands\User\SetUserEmailCommand.cs" />
+    <Compile Include="Commands\User\SetUserEmailConfirmCommand.cs" />
+    <Compile Include="Commands\User\UpdateUserCommand.cs" />
+    <Compile Include="Commands\Zone\AddZoneCommand.cs" />
+    <Compile Include="Commands\Zone\DeleteZoneCommand.cs" />
+    <Compile Include="Commands\Zone\UpdateZoneCommand.cs" />
+    <Compile Include="Dtos\PostItemDto.cs" />
+    <Compile Include="Dtos\AppFunctionDto.cs" />
+    <Compile Include="Dtos\CategoryDto.cs" />
+    <Compile Include="Dtos\CommentDto.cs" />
+    <Compile Include="Dtos\CacheableDto.cs" />
+    <Compile Include="Dtos\InstallZoneDto.cs" />
+    <Compile Include="Dtos\JobDto.cs" />
+    <Compile Include="Dtos\LinkDto.cs" />
+    <Compile Include="Dtos\NavigationDto.cs" />
+    <Compile Include="Dtos\PortalConfigsDto.cs" />
+    <Compile Include="Dtos\PortalDto.cs" />
+    <Compile Include="Dtos\PortalInstallResultDto.cs" />
+    <Compile Include="Dtos\PortalSettingsDto.cs" />
+    <Compile Include="Dtos\PostDto.cs" />
+    <Compile Include="Dtos\PostSerieDto.cs" />
+    <Compile Include="Dtos\PostSummaryDto.cs" />
+    <Compile Include="Dtos\ResultDto.cs" />
+    <Compile Include="Dtos\RoleDto.cs" />
+    <Compile Include="Dtos\RoleFunctionDto.cs" />
+    <Compile Include="Dtos\RoleFunctionsDto.cs" />
+    <Compile Include="Dtos\SiteDto.cs" />
+    <Compile Include="Dtos\SiteSettingsDto.cs" />
+    <Compile Include="Dtos\TaskDetailDto.cs" />
+    <Compile Include="Dtos\TaskDto.cs" />
+    <Compile Include="Dtos\UserDto.cs" />
+    <Compile Include="Dtos\UserPostPermissionDto.cs" />
+    <Compile Include="Dtos\UserSitesAndZonesDto.cs" />
+    <Compile Include="Dtos\ZoneDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\FindAllQuery.cs" />
+    <Compile Include="Queries\FindByIdQuery.cs" />
+    <Compile Include="Queries\FindByNameQuery.cs" />
+    <Compile Include="Queries\FindByUserNameQuery.cs" />
+    <Compile Include="Queries\FindNavigationQuery.cs" />
+    <Compile Include="Queries\FindPortalQuery.cs" />
+    <Compile Include="Queries\FindPostByNameQuery.cs" />
+    <Compile Include="Queries\FindPostItemsQuery.cs" />
+    <Compile Include="Queries\FindPostSummariesQuery.cs" />
+    <Compile Include="Queries\FindRoleFunctionsQuery.cs" />
+    <Compile Include="Queries\FindUserEntryPermissionsQuery.cs" />
+    <Compile Include="Queries\FindUsersByRoleQuery.cs" />
+    <Compile Include="Queries\FindUserSitesQuery.cs" />
+    <Compile Include="Queries\FindZonesByNameQuery.cs" />
+    <Compile Include="Queries\FindZonesBySiteIdQuery.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Roham.Lib.Domain\Roham.Lib.Domain.csproj">
+      <Project>{34d0c094-418b-47d9-b329-ddf82b1f4274}</Project>
+      <Name>Roham.Lib.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roham.Lib\Roham.Lib.csproj">
+      <Project>{b4e27ae0-ec45-4e7c-a739-fde6ee01491d}</Project>
+      <Name>Roham.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

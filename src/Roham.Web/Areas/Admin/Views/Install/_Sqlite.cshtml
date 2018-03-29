@@ -1,0 +1,38 @@
+﻿@using Roham.Web.Areas.Admin.ViewModels
+@using Roham.Resources
+
+@model InstallViewModel
+
+<div class="row">
+    <div class="form-group col-md-4 db-advanced">
+        <div>
+            <div class="checkbox-square" style="float:left">
+                @Html.CheckBoxFor(m => m.Advanced, new { @id = "chk-db-advanced" })
+                <label for="chk-db-advanced"></label>
+            </div>
+            <div class="check-box-div-label">
+                <label>@Labels.ShowConnectionString</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dbsettings-advanced" style="display:none;width:100%;">
+    <div class="form-group">        
+        @Html.TextBoxFor(m => m.Sqlite.ConnectionString, new { @class = "form-control", id="db-connstr", @style = "min-width:100%;" })
+    </div>
+</div>
+
+<div id="dbsettings">
+    <div class="row">
+        <div id="div-datasource" class="form-group col-md-4">
+            @Html.RequiredLabelFor(m => m.Sqlite.DataSource)
+            @Html.TextBoxFor(m => m.Sqlite.DataSource, new { @class = "form-control required", @required = "required" })
+        </div>
+
+        <div id="div-dbpassword" class="form-group col-md-4">
+            @Html.LabelForExt(m => m.Sqlite.Password)
+            @Html.PasswordFor(m => m.Sqlite.Password, new { @class = "form-control" })
+        </div>
+    </div>
+</div>

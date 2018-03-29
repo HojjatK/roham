@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" /> 
+    <link href="~/Content/toastr.min.css" rel="stylesheet" type="text/css" /> 
+    <link href="~/Content/roham/install.css" rel="stylesheet" type="text/css" /> 
+    <title>@WebAppInfo.Name Installation</title>
+</head>
+<body>
+    <div>
+        <div class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    @if (WebAppInfo.IsInstalled)
+                    {
+                        <a href='@Url.Action("", "Home", new { Area = "Admin" })'>
+                            <img src="~/Content/roham/images/brand.png" width="80" height="60" /> @WebAppInfo.Name
+                        </a>
+                    }
+                    else
+                    {
+                        <img src="~/Content/roham/images/brand.png" width="80" height="60" /> @WebAppInfo.Name
+                    }
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="text-center">
+                <br />
+                &copy; @WebAppInfo.Copyright
+            </p>
+        </div>
+    </footer>
+
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/toastr.js"></script>  
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

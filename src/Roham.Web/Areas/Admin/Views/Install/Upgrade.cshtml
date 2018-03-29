@@ -1,0 +1,60 @@
+﻿@using Roham.Web.Areas.Admin.ViewModels
+@using Roham.Resources
+
+@model UpgradeViewModel
+
+@{
+    ViewBag.Title = Labels.Upgrade;
+    Layout = "~/Areas/Admin/Views/Shared/_InstallLayout.cshtml";
+}
+
+@if (Model.Message != null && Model.Message != string.Empty)
+{
+    <div class="alert alert-success">
+        <p class="text-center">
+            @Labels.Congratulation <br />
+            @Model.Message
+        </p>
+    </div>
+}
+
+@if (Model.UpgradeOutput.Count > 1)
+{
+    <h4>@ScreenTexts.Upgrade_ResultText</h4>
+    <div class="block-box green">
+        <pre>            
+            @foreach (var line in Model.UpgradeOutput) {
+                <code>@line</code>
+            }
+        </pre>
+    </div>
+    <p>
+        @Html.ActionLink("Login", "Login", "Account", new { Area = "" }, null) @ScreenTexts.Upgrade_DoneLoginText
+    </p>
+}
+else
+{
+    if (User.Identity.IsAuthenticated)
+    {
+        <p>@ScreenTexts.Upgrade_EverythingUpToDateText</p>
+    }
+    else
+    {
+        @Html.ActionLink("Login", "Login", "Account", new { Area = "" }, null) @ScreenTexts.Upgrade_LoginText
+    }
+}
+
+
+@if (Model.UpgradeRequried)
+{
+    if (User.Identity.IsAuthenticated)
+    {
+        <p>TODO: Show upgrade status</p>
+    }
+    else
+    {
+        <p>
+            @Html.ActionLink("Login", "Login", "Account", new { Area = "", returnUrl = Url.Action("Upgrade", "Install", new { area = "Admin" }) }) @ScreenTexts.Upgrade_LoginRequiredText
+        </p>
+    }
+}

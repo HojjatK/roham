@@ -1,0 +1,24 @@
+﻿@screen-hs-min: 480px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+/*Round button*/
+@round-btn-color: #777;
+@round-btn-hover-color: #fff;
+
+/*Hamburger*/
+@hamburger-color: #eee; 
+
+//@dark-bg: rgb(24, 24, 24);
+@dark-bg: #2c3e50;
+@dark-bg2:#1c2e40; 
+
+/*Mixins*/
+.keyframes-mixin(@name, @frames) {
+    @-webkit-keyframes @name { @frames(); }
+    @-moz-keyframes @name { @frames(); }
+    @-ms-keyframes @name { @frames(); }
+    @-o-keyframes @name { @frames(); }
+    @keyframes @name { @frames(); }
+}

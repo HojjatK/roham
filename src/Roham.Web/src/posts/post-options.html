@@ -1,0 +1,136 @@
+﻿<template bindable="model, templatechanged, displaydatechanged">
+    <require from="./../components/select-picker"></require>
+    <require from="./../components/date-picker"></require>
+
+    <div class="container">
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2" for="metaTitle">Meta Title</label>
+                <div class="col-4">
+                    <input class="form-control" id="metaTitle" name="metaTitle"  value.bind="model.metaTitle & validate" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2" for="metaDescription">Meta Description</label>
+                <div class="col-6">
+                    <textarea class="form-control" id="metaDescription" name="metaDescription" value.bind="model.metaDescription & validate"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2" for="pageTemplate">Template</label>
+                <div class="col-4">
+                    <select-picker name="pageTemplate" selectable-values.bind="availableTemplates" selected-value.two-way="model.pageTemplate" changed.delegate="templatechanged($newValue, $oldValue)"></select-picker>                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row" if.bind="model.isPersisted">
+            <div class="form-group">
+                <label class="col-2" for="author">Created</label>
+                <div class="col-2">                    
+                    <date-picker value.bind="model.created" readonly="true"></date-picker>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" if.bind="model.isPersisted">
+            <div class="form-group">
+                <label class="col-2" for="author">Published</label>
+                <div class="col-2">                    
+                    <date-picker value.bind="model.published" readonly="true"></date-picker>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2" for="author">Display Publish</label>
+                <div class="col-2">                    
+                    <date-picker value.bind="model.displayDate" change-date.call="displaydatechanged()"></date-picker>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2" for="author">Author</label>
+                <div class="col-2">
+                    <input class="form-control" id="author" name="author" value.bind="model.author & validate" />
+                </div>
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="form-group">
+                <label class="col-2">Private Post</label>
+                <div class="col-2">
+                    <div class="checkbox-square">
+                        <input type="checkbox" id="isPrivate" name="isPrivate" checked.bind="model.isPrivate" />
+                        <label for="isPrivate"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2">Discussion Enabled</label>
+                <div class="col-2">
+                    <div class="checkbox-square">
+                        <input type="checkbox" id="isDiscussionEnabled" name="isDiscussionEnabled" checked.bind="model.isDiscussionEnabled" />
+                        <label for="isDiscussionEnabled"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2">Rating Enabled</label>
+                <div class="col-2">
+                    <div class="checkbox-square">
+                        <input type="checkbox" id="isRatingEnabled" name="isRatingEnabled" checked.bind="model.isRatingEnabled" />
+                        <label for="isRatingEnabled"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2" for="author">Disable Discussion Days</label>
+                <div class="col-2">
+                    <input class="form-control" id="disableDiscussionDays" name="disableDiscussionDays" value.bind="model.disableDiscussionDays & validate" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2">Anonymous Comment Allowed</label>
+                <div class="col-2">
+                    <div class="checkbox-square">
+                        <input type="checkbox" id="isAnonymousCommentAllowed" name="isAnonymousCommentAllowed" checked.bind="model.isAnonymousCommentAllowed" />
+                        <label for="isAnonymousCommentAllowed"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-2" for="conentSummary">Summary</label>
+                <div class="col-6">
+                    <textarea class="form-control" id="conentSummary" name="conentSummary" value.bind="model.conentSummary & validate"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>
